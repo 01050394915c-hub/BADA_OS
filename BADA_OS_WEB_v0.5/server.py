@@ -1,6 +1,7 @@
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 from datetime import datetime, timedelta
+import copy
 import json
 import threading
 import urllib.parse
@@ -23,7 +24,12 @@ DEFAULT = {
     "scan_info": {}
 }
 
+LATEST_PAYLOAD = None
+
+
 def load_data():
+    if LATEST_PAYLOAD is not None:
+        return copy.deepcopy(LATEST_PAYLOAD)
     if not DATA.exists():
         save_data(DEFAULT.copy())
     try:
@@ -77,6 +83,7 @@ def run_scan():
         errors.append(f"Amazon: {type(exc).__name__}")
 
     arrival = datetime.now().date() + timedelta(days=lead_days)
+    data["settings"] = settings
     data["candidates"] = build_candidates(trends, arrival)[:40]
     data["last_scan"] = datetime.now().isoformat(timespec="seconds")
     data["scan_info"] = {
@@ -85,8 +92,12 @@ def run_scan():
         "errors": errors,
         "mode": "live" if trends else "catalog-fallback"
     }
+    if "amazon" not in data["scan_info"]["source_counts"]:
+        data["scan_info"]["source_counts"]["amazon"] = 0
     save_data(data)
-    return data
+    global LATEST_PAYLOAD
+    LATEST_PAYLOAD = copy.deepcopy(data)
+    return copy.deepcopy(data)
 
 class Handler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
@@ -118,7 +129,10 @@ class Handler(SimpleHTTPRequestHandler):
             length = int(self.headers.get("Content-Length", "0"))
             try:
                 body = self.rfile.read(length).decode("utf-8")
-                save_data(json.loads(body))
+                payload = json.loads(body)
+                save_data(payload)
+                global LATEST_PAYLOAD
+                LATEST_PAYLOAD = copy.deepcopy(payload)
                 self.send_json({"ok": True})
             except Exception as exc:
                 self.send_json({"ok": False, "error": str(exc)}, 400)

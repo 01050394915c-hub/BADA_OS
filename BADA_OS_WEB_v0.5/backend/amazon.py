@@ -40,7 +40,7 @@ class _AmazonLinkParser(HTMLParser):
         if not href:
             return False
         lower = href.lower()
-        return any(token in lower for token in ("/dp/", "/gp/product/", "/product/", "/b/", "/s?k="))
+        return any(token in lower for token in ("/dp/", "/gp/product/", "/product/"))
 
 
 def _normalize_text(value):
@@ -56,6 +56,7 @@ def _extract_category(html):
         r"Best Sellers in ([^<]+)",
         r"<h1[^>]*>(.*?)</h1>",
         r"<h2[^>]*>(.*?)</h2>",
+        r"<title>(.*?)</title>",
     ]:
         match = re.search(pattern, html, re.IGNORECASE | re.DOTALL)
         if match:
@@ -71,7 +72,7 @@ def _extract_from_regex(html):
         href = match.group(1)
         if not href.startswith("http"):
             href = urllib.parse.urljoin("https://www.amazon.com", href)
-        if any(token in href for token in ("/dp/", "/gp/product/", "/product/", "/b/")):
+        if any(token in href for token in ("/dp/", "/gp/product/", "/product/")):
             results.append((href, ""))
     return results
 
@@ -83,6 +84,65 @@ def _extract_title_from_href(href):
     if match:
         return f"Amazon Product {match.group(1)}"
     return "Amazon Product"
+
+
+def _extract_from_playwright(max_items=20):
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception:
+        return []
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page(
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36"
+            )
+            page.goto(AMAZON_BESTSELLERS_URL, wait_until="domcontentloaded", timeout=60000)
+            page.wait_for_timeout(4000)
+            category = _normalize_text(page.locator("h1").first.text_content(timeout=5000)) or _normalize_text(page.locator("#zg_banner_text").first.text_content(timeout=5000)) or "Amazon Best Sellers"
+            rows = page.evaluate(
+                """
+                () => {
+                    const anchors = Array.from(document.querySelectorAll('a[href*="/dp/"]'));
+                    const seen = new Set();
+                    const rows = [];
+                    for (const anchor of anchors) {
+                        const href = anchor.getAttribute('href') || '';
+                        const text = (anchor.textContent || '').replace(/\s+/g, ' ').trim();
+                        if (!href || !text || text.length < 4 || text.length > 140) continue;
+                        if (/^\$/.test(text) || /offers? from/i.test(text) || /see more/i.test(text) || /shop now/i.test(text) || /customer reviews/i.test(text) || /sign in/i.test(text) || /amazon basics/i.test(text)) continue;
+                        const key = `${href}|${text}`.toLowerCase();
+                        if (seen.has(key)) continue;
+                        seen.add(key);
+                        rows.push({ title: text, href });
+                        if (rows.length >= 20) break;
+                    }
+                    return rows;
+                }
+                """
+            )
+            browser.close()
+    except Exception:
+        return []
+
+    results = []
+    for item in rows[:max_items]:
+        title = _normalize_text(item.get("title", ""))
+        href = item.get("href", "") or ""
+        url = _normalize_url(href)
+        if not title:
+            title = _extract_title_from_href(url)
+        if len(title) < 3 or len(title) > 140:
+            continue
+        results.append({
+            "title": title,
+            "source": "amazon",
+            "region": "US",
+            "category": category,
+            "url": url,
+        })
+    return results
 
 
 def fetch_amazon_best_sellers(max_items=20):
@@ -97,7 +157,7 @@ def fetch_amazon_best_sellers(max_items=20):
         with urllib.request.urlopen(request, timeout=20) as response:
             html = response.read().decode("utf-8", errors="ignore")
     except Exception:
-        return []
+        html = ""
 
     category = _extract_category(html)
     parser = _AmazonLinkParser()
@@ -131,4 +191,9 @@ def fetch_amazon_best_sellers(max_items=20):
         if len(results) >= max_items:
             break
 
-    return results
+    if len(results) < 3:
+        playwright_results = _extract_from_playwright(max_items)
+        if playwright_results:
+            return playwright_results
+
+    return results[:max_items]

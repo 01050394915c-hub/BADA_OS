@@ -83,6 +83,50 @@ def _seasonal(name, category, month):
     return bonus, reasons
 
 
+def _build_ai_reasons(trends, name, category, china, score, seasonal_reasons, is_amazon=False):
+    reasons = []
+    google_hits = 0
+    naver_hits = 0
+    amazon_hits = 0
+    category_hits = 0
+
+    category_key = None
+    for key, matched_category in CATEGORY_BONUS.items():
+        if matched_category == category:
+            category_key = key
+            break
+
+    for item in trends:
+        source = str(item.get("source", "") or "").lower()
+        title = str(item.get("title", "") or "").lower()
+        if source.startswith("google"):
+            google_hits += 1
+        elif source in {"naver", "naver-fallback"}:
+            naver_hits += 1
+        elif source == "amazon":
+            amazon_hits += 1
+
+        if category_key:
+            words = LIVE_RULES.get(category_key, [])
+            if any(word.lower() in title for word in words):
+                category_hits += 1
+
+    if google_hits >= 1:
+        reasons.append("Google 검색량 증가")
+    if naver_hits >= 1:
+        reasons.append("네이버 검색 증가")
+    if amazon_hits >= 1 or is_amazon:
+        reasons.append("Amazon Bestseller")
+    if category_hits >= 1 and category:
+        reasons.append(f"{category} 카테고리 강세")
+    if seasonal_reasons:
+        reasons.append("계절성 상승")
+    if not reasons:
+        reasons.append("실시간 검색 신호 기반 후보")
+
+    return " · ".join(reasons[:5])
+
+
 def _collect_sources(trends):
     sources = set()
     for item in trends:
@@ -110,7 +154,7 @@ def _build_amazon_candidates(trends, arrival_date):
             "category": category,
             "china_keyword": "",
             "score": score,
-            "reason": "Amazon US Best Sellers 기준 인기 상품",
+            "reason": _build_ai_reasons(trends, title, category, "", score, [], is_amazon=True),
             "signals": ["Amazon US", "Best Sellers"],
             "arrival_date": arrival_date.isoformat(),
             "status": "우선 검토",
@@ -144,7 +188,7 @@ def build_candidates(trends, arrival_date):
             "category": category,
             "china_keyword": china,
             "score": min(97, score),
-            "reason": reason,
+            "reason": _build_ai_reasons(trends, name, category, china, min(97, score), seasonal_reasons, is_amazon=False),
             "signals": signals[:3] or [f"{arrival_date.month}월 판매 시작 기준 기본 후보"],
             "arrival_date": arrival_date.isoformat(),
             "status": "우선 검토" if score >= 86 else "관찰 후보",

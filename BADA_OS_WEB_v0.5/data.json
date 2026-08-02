@@ -13,574 +13,861 @@
       "name": "차량용 틈새 수납함",
       "category": "자동차용품",
       "china_keyword": "汽车座椅缝隙收纳盒",
-      "score": 92,
-      "reason": "차량 정리와 분실 방지 수요",
+      "score": 96,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 자동차용품 카테고리 강세 · 계절성 상승",
       "signals": [
+        "medicube Toner Pads Zero Pore Pad 2.0 | Dual-Textured Facial Pad for Exfoliation and Pore Care with 4.5% AHA Lactic Acid, 0.45%…",
+        "eos Shea Better Body Lotion Vanilla Cashmere, 24-Hour Moisture Skin Care, Lightweight & Non-Greasy, Natural Shea, Vegan, Vanilla…",
         "계절 옷 정리 수요"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E5%BA%A7%E6%A4%85%E7%BC%9D%E9%9A%99%E6%94%B6%E7%BA%B3%E7%9B%92"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E5%BA%A7%E6%A4%85%E7%BC%9D%E9%9A%99%E6%94%B6%E7%BA%B3%E7%9B%92",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
+    },
+    {
+      "name": "여행용 압축 파우치",
+      "category": "여행·캠핑",
+      "china_keyword": "旅行压缩收纳袋",
+      "score": 92,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 여행·캠핑 카테고리 강세",
+      "signals": [
+        "STANLEY Quencher H2.0 Tumbler with Handle and Straw 30 oz | Flowstate 3-Position Lid | Cup Holder Compatible for Travel |…",
+        "HydroJug Traveler 40oz, Insulated Tumbler with Handle & Straw, Pink Sand"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%97%85%E8%A1%8C%E5%8E%8B%E7%BC%A9%E6%94%B6%E7%BA%B3%E8%A2%8B",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "진공 압축팩",
       "category": "생활·수납",
       "china_keyword": "真空压缩收纳袋",
       "score": 91,
-      "reason": "계절 옷 교체와 공간 절약 수요",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 계절성 상승",
       "signals": [
         "계절 옷 정리 수요"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%9C%9F%E7%A9%BA%E5%8E%8B%E7%BC%A9%E6%94%B6%E7%BA%B3%E8%A2%8B"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%9C%9F%E7%A9%BA%E5%8E%8B%E7%BC%A9%E6%94%B6%E7%BA%B3%E8%A2%8B",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "냉장고 회전 정리 트레이",
       "category": "주방",
       "china_keyword": "冰箱旋转收纳盘",
-      "score": 89,
-      "reason": "보관 전후 비교가 뛰어남",
+      "score": 91,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 주방 카테고리 강세",
       "signals": [
-        "9월 판매 시작 기준 기본 후보"
+        "Etekcity Food Kitchen Scale, Digital Grams and Ounces, 11lb | Tare function, ideal for baking, weight loss, keto, meal prep, packages,…"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%86%B0%E7%AE%B1%E6%97%8B%E8%BD%AC%E6%94%B6%E7%BA%B3%E7%9B%98"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%86%B0%E7%AE%B1%E6%97%8B%E8%BD%AC%E6%94%B6%E7%BA%B3%E7%9B%98",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "창문 틈새 청소 브러시",
       "category": "청소",
       "china_keyword": "窗户缝隙清洁刷",
       "score": 88,
-      "reason": "전후 비교가 강한 문제 해결형",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
       "signals": [
         "9월 판매 시작 기준 기본 후보"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AA%97%E6%88%B7%E7%BC%9D%E9%9A%99%E6%B8%85%E6%B4%81%E5%88%B7"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AA%97%E6%88%B7%E7%BC%9D%E9%9A%99%E6%B8%85%E6%B4%81%E5%88%B7",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
-      "name": "여행용 압축 파우치",
-      "category": "여행·캠핑",
-      "china_keyword": "旅行压缩收纳袋",
+      "name": "차량용 햇빛가리개",
+      "category": "자동차용품",
+      "china_keyword": "汽车遮阳帘",
       "score": 88,
-      "reason": "여행 짐 부피 감소 효과가 분명",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 자동차용품 카테고리 강세",
       "signals": [
-        "9월 판매 시작 기준 기본 후보"
+        "medicube Toner Pads Zero Pore Pad 2.0 | Dual-Textured Facial Pad for Exfoliation and Pore Care with 4.5% AHA Lactic Acid, 0.45%…",
+        "eos Shea Better Body Lotion Vanilla Cashmere, 24-Hour Moisture Skin Care, Lightweight & Non-Greasy, Natural Shea, Vegan, Vanilla…"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%97%85%E8%A1%8C%E5%8E%8B%E7%BC%A9%E6%94%B6%E7%BA%B3%E8%A2%8B"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E9%81%AE%E9%98%B3%E5%B8%98",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
+    },
+    {
+      "name": "싱크대 걸이형 음식물 거름망",
+      "category": "주방",
+      "china_keyword": "水槽挂式过滤网",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 주방 카테고리 강세",
+      "signals": [
+        "Etekcity Food Kitchen Scale, Digital Grams and Ounces, 11lb | Tare function, ideal for baking, weight loss, keto, meal prep, packages,…"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B0%B4%E6%A7%BD%E6%8C%82%E5%BC%8F%E8%BF%87%E6%BB%A4%E7%BD%91",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
+    },
+    {
+      "name": "반려동물 털 제거 롤러",
+      "category": "반려동물",
+      "china_keyword": "宠物粘毛器",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 반려동물 카테고리 강세",
+      "signals": [
+        "Apple AirTag (2nd Generation): Tracker for Keychain, Wallet, and More; Locator with Sound; Simple One-Tap Setup with iPhone or…"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%AE%A0%E7%89%A9%E7%B2%98%E6%AF%9B%E5%99%A8",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
+    },
+    {
+      "name": "blink plus plan with monthly auto-renewal",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Blink-Plus-Plan-monthly-auto-renewal/dp/B08JHCVHTY/ref=zg_bs_c_electronics_d_sccl_1/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B08JHCVHTY&psc=1",
+      "amazon_url": "https://www.amazon.com/Blink-Plus-Plan-monthly-auto-renewal/dp/B08JHCVHTY/ref=zg_bs_c_electronics_d_sccl_1/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B08JHCVHTY&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Apple EarPods Headphones with USB-C Plug, Wired Ear Buds with Built-in Remote to Control Music, Phone Calls, and Volume",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Apple-EarPods-Headphones-Built-Control/dp/B0DCH8VDXF/ref=zg_bs_c_electronics_d_sccl_2/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0DCH8VDXF&psc=1",
+      "amazon_url": "https://www.amazon.com/Apple-EarPods-Headphones-Built-Control/dp/B0DCH8VDXF/ref=zg_bs_c_electronics_d_sccl_2/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0DCH8VDXF&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Apple AirTag (2nd Generation): Tracker for Keychain, Wallet, and More; Locator with Sound; Simple One-Tap Setup with iPhone or…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Apple-AirTag-2nd-Generation-Precision/dp/B0GJTFXNRX/ref=zg_bs_c_electronics_d_sccl_3/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0GJTFXNRX&psc=1",
+      "amazon_url": "https://www.amazon.com/Apple-AirTag-2nd-Generation-Precision/dp/B0GJTFXNRX/ref=zg_bs_c_electronics_d_sccl_3/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0GJTFXNRX&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Apple AirPods 4 Wireless Earbuds, Bluetooth Headphones, Personalized Spatial Audio, Sweat and Water Resistant, USB-C…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Apple-Bluetooth-Headphones-Personalized-Effortless/dp/B0DGHMNQ5Z/ref=zg_bs_c_electronics_d_sccl_4/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0DGHMNQ5Z&psc=1",
+      "amazon_url": "https://www.amazon.com/Apple-Bluetooth-Headphones-Personalized-Effortless/dp/B0DGHMNQ5Z/ref=zg_bs_c_electronics_d_sccl_4/132-6701516-2260405?pd_rd_w=3oxbG&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0DGHMNQ5Z&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Owala FreeSip Stainless Steel Water Bottle 24 oz Very, Very Dark",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Owala-Insulated-Stainless-Steel-Push-Button-24-Ounce/dp/B085DTZQNZ/ref=zg_bs_c_kitchen_d_sccl_1/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B085DTZQNZ&psc=1",
+      "amazon_url": "https://www.amazon.com/Owala-Insulated-Stainless-Steel-Push-Button-24-Ounce/dp/B085DTZQNZ/ref=zg_bs_c_kitchen_d_sccl_1/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B085DTZQNZ&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "STANLEY Quencher H2.0 Tumbler with Handle and Straw 30 oz | Flowstate 3-Position Lid | Cup Holder Compatible for Travel |…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/STANLEY-Flowstate-3-Position-Compatible-Insulated/dp/B0CP9YB3Q4/ref=zg_bs_c_kitchen_d_sccl_2/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0CP9YB3Q4&psc=1",
+      "amazon_url": "https://www.amazon.com/STANLEY-Flowstate-3-Position-Compatible-Insulated/dp/B0CP9YB3Q4/ref=zg_bs_c_kitchen_d_sccl_2/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0CP9YB3Q4&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Etekcity Food Kitchen Scale, Digital Grams and Ounces, 11lb | Tare function, ideal for baking, weight loss, keto, meal prep, packages,…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Etekcity-Multifunction-Stainless-Batteries-Included/dp/B0113UZJE2/ref=zg_bs_c_kitchen_d_sccl_3/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0113UZJE2&psc=1",
+      "amazon_url": "https://www.amazon.com/Etekcity-Multifunction-Stainless-Batteries-Included/dp/B0113UZJE2/ref=zg_bs_c_kitchen_d_sccl_3/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0113UZJE2&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "HydroJug Traveler 40oz, Insulated Tumbler with Handle & Straw, Pink Sand",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/HydroJug-Traveler-Resistant-Bottle-Reusable-Insulated/dp/B0CQVWT2NH/ref=zg_bs_c_kitchen_d_sccl_4/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0CQVWT2NH&psc=1",
+      "amazon_url": "https://www.amazon.com/HydroJug-Traveler-Resistant-Bottle-Reusable-Insulated/dp/B0CQVWT2NH/ref=zg_bs_c_kitchen_d_sccl_4/132-6701516-2260405?pd_rd_w=XG74f&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0CQVWT2NH&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "medicube Toner Pads Zero Pore Pad 2.0 | Dual-Textured Facial Pad for Exfoliation and Pore Care with 4.5% AHA Lactic Acid, 0.45%…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Medicube-Zero-Pore-Pads-Dual-Textured/dp/B09V7Z4TJG/ref=zg_bs_c_beauty_d_sccl_1/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B09V7Z4TJG&psc=1",
+      "amazon_url": "https://www.amazon.com/Medicube-Zero-Pore-Pads-Dual-Textured/dp/B09V7Z4TJG/ref=zg_bs_c_beauty_d_sccl_1/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B09V7Z4TJG&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Mighty Patch Hero Cosmetics Original Nighttime Acne Pimple Patches, 36 Ct | #1 Hydrocolloid Acne Patches, Shrinking Zits &…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Mighty-Patch-Hydrocolloid-Absorbing-count/dp/B074PVTPBW/ref=zg_bs_c_beauty_d_sccl_3/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B074PVTPBW&psc=1",
+      "amazon_url": "https://www.amazon.com/Mighty-Patch-Hydrocolloid-Absorbing-count/dp/B074PVTPBW/ref=zg_bs_c_beauty_d_sccl_3/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B074PVTPBW&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "eos Shea Better Body Lotion Vanilla Cashmere, 24-Hour Moisture Skin Care, Lightweight & Non-Greasy, Natural Shea, Vegan, Vanilla…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/eos-Cashmere-Moisture-Lightweight-Non-Greasy/dp/B08KT2Z93D/ref=zg_bs_c_beauty_d_sccl_4/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B08KT2Z93D&psc=1",
+      "amazon_url": "https://www.amazon.com/eos-Cashmere-Moisture-Lightweight-Non-Greasy/dp/B08KT2Z93D/ref=zg_bs_c_beauty_d_sccl_4/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B08KT2Z93D&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "The Ordinary Glycolic Acid 7% Exfoliating Toner, Brightening and Smoothing Daily Toner for More Even-Looking Skin Tone",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Ordinary-Exfoliating-Brightening-Smoothing-Even-Looking/dp/B071914GGL/ref=zg_bs_c_beauty_d_sccl_5/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B071914GGL&psc=1",
+      "amazon_url": "https://www.amazon.com/Ordinary-Exfoliating-Brightening-Smoothing-Even-Looking/dp/B071914GGL/ref=zg_bs_c_beauty_d_sccl_5/132-6701516-2260405?pd_rd_w=xZhKP&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B071914GGL&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Bounty Paper Towels Quick Size, White, 16 Family Rolls = 40 Regular Rolls",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Bounty-Quick-Size-Paper-Towels-Family/dp/B079VP6DH5/ref=zg_bs_c_hpc_d_sccl_1/132-6701516-2260405?pd_rd_w=KMYTl&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B079VP6DH5&psc=1",
+      "amazon_url": "https://www.amazon.com/Bounty-Quick-Size-Paper-Towels-Family/dp/B079VP6DH5/ref=zg_bs_c_hpc_d_sccl_1/132-6701516-2260405?pd_rd_w=KMYTl&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B079VP6DH5&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Scott ComfortPlus Toilet Paper, 12 Triple Rolls, 231 Sheets per Roll, Septic-Safe, 1-Ply Toilet Tissue",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Scott-Comfortplus-Toilet-Tissue-Double/dp/B07BGLT25K/ref=zg_bs_c_hpc_d_sccl_3/132-6701516-2260405?pd_rd_w=KMYTl&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B07BGLT25K&psc=1",
+      "amazon_url": "https://www.amazon.com/Scott-Comfortplus-Toilet-Tissue-Double/dp/B07BGLT25K/ref=zg_bs_c_hpc_d_sccl_3/132-6701516-2260405?pd_rd_w=KMYTl&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B07BGLT25K&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Angel Soft Toilet Paper, 18 Mega Rolls = 72 Regular Rolls, Soft and Strong Toilet Tissue",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Angel-Soft-Toilet-Regular-Strong/dp/B0FN4NH4K8/ref=zg_bs_c_hpc_d_sccl_4/132-6701516-2260405?pd_rd_w=KMYTl&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0FN4NH4K8&psc=1",
+      "amazon_url": "https://www.amazon.com/Angel-Soft-Toilet-Regular-Strong/dp/B0FN4NH4K8/ref=zg_bs_c_hpc_d_sccl_4/132-6701516-2260405?pd_rd_w=KMYTl&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0FN4NH4K8&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Hanes mens Underwear Boxer Briefs Pack, Cool & Breathable Cotton Moisture-wicking Underwear for Men, No Ride Up",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Hanes-Breathable-ComfortFlex-Waistband-Multipack/dp/B086KSDTQ4/ref=zg_bs_c_fashion_d_sccl_1/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B086KSDTQ4&psc=1",
+      "amazon_url": "https://www.amazon.com/Hanes-Breathable-ComfortFlex-Waistband-Multipack/dp/B086KSDTQ4/ref=zg_bs_c_fashion_d_sccl_1/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B086KSDTQ4&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "OEAK Womens Jelly Bras Wireless Deep V Bralette Comfy Push Up Tshirt Bras | Comfortable,support and lift,no…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/OEAK-Comfortable-Supportive-Underwire-Bralettes/dp/B0DZC995ZR/ref=zg_bs_c_fashion_d_sccl_2/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0DZC995ZR&psc=1",
+      "amazon_url": "https://www.amazon.com/OEAK-Comfortable-Supportive-Underwire-Bralettes/dp/B0DZC995ZR/ref=zg_bs_c_fashion_d_sccl_2/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0DZC995ZR&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "LetsJoli Jelly Bras for Women No Underwire Plus Size Push Up Supportive | Full Coverage, Wireless Support Lift, For Older…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/LetsJoli-Supportive-Wireless-Underwear-Women%EF%BC%88Nude/dp/B0F6VKZ4FB/ref=zg_bs_c_fashion_d_sccl_3/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0F6VKZ4FB&psc=1",
+      "amazon_url": "https://www.amazon.com/LetsJoli-Supportive-Wireless-Underwear-Women%EF%BC%88Nude/dp/B0F6VKZ4FB/ref=zg_bs_c_fashion_d_sccl_3/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B0F6VKZ4FB&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Hanes Men's Hoodie - EcoSmart Fleece Hooded Sweatshirt for Men & Women - Midweight Fleece - Big & Tall Available",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/Hanes-Pullover-EcoSmart-Fleece-Hoodie/dp/B00JUM36R8/ref=zg_bs_c_fashion_d_sccl_4/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B00JUM36R8&psc=1",
+      "amazon_url": "https://www.amazon.com/Hanes-Pullover-EcoSmart-Fleece-Hoodie/dp/B00JUM36R8/ref=zg_bs_c_fashion_d_sccl_4/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B00JUM36R8&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
+    },
+    {
+      "name": "Water Shoes for Women Men Quick-Dry Aqua Socks Swim Beach Outfits Barefoot | Yoga Exercise Wear Sport Accessories Pool…",
+      "category": "Amazon Best Sellers",
+      "china_keyword": "",
+      "score": 88,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
+      "signals": [
+        "Amazon US",
+        "Best Sellers"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://www.amazon.com/ATHMILE-Quick-Dry-Barefoot-Exercise-Accessories/dp/B09Q3MYDQH/ref=zg_bs_c_fashion_d_sccl_5/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B09Q3MYDQH&psc=1",
+      "amazon_url": "https://www.amazon.com/ATHMILE-Quick-Dry-Barefoot-Exercise-Accessories/dp/B09Q3MYDQH/ref=zg_bs_c_fashion_d_sccl_5/132-6701516-2260405?pd_rd_w=Up4fZ&content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&pf_rd_r=111ZBR0VT749RZ80E4KP&pd_rd_wg=lguuj&pd_rd_r=59159c9a-2fc2-40ed-86dd-aaceadae3f0c&pd_rd_i=B09Q3MYDQH&psc=1",
+      "source": "amazon",
+      "source_label": "Amazon US",
+      "sources": [
+        "amazon"
+      ]
     },
     {
       "name": "침대 밑 슬림 수납함",
       "category": "생활·수납",
       "china_keyword": "床底收纳盒 超薄",
       "score": 87,
-      "reason": "좁은 집 공간 활용 수요",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 계절성 상승",
       "signals": [
         "계절 옷 정리 수요"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%BA%8A%E5%BA%95%E6%94%B6%E7%BA%B3%E7%9B%92%20%E8%B6%85%E8%96%84"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%BA%8A%E5%BA%95%E6%94%B6%E7%BA%B3%E7%9B%92%20%E8%B6%85%E8%96%84",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
+    },
+    {
+      "name": "강아지 발 세척컵",
+      "category": "반려동물",
+      "china_keyword": "宠物洗脚杯",
+      "score": 87,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 반려동물 카테고리 강세",
+      "signals": [
+        "Apple AirTag (2nd Generation): Tracker for Keychain, Wallet, and More; Locator with Sound; Simple One-Tap Setup with iPhone or…"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%AE%A0%E7%89%A9%E6%B4%97%E8%84%9A%E6%9D%AF",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
+    },
+    {
+      "name": "휴대용 방수 가방",
+      "category": "여행·캠핑",
+      "china_keyword": "防水漂流袋",
+      "score": 87,
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 여행·캠핑 카테고리 강세",
+      "signals": [
+        "STANLEY Quencher H2.0 Tumbler with Handle and Straw 30 oz | Flowstate 3-Position Lid | Cup Holder Compatible for Travel |…",
+        "HydroJug Traveler 40oz, Insulated Tumbler with Handle & Straw, Pink Sand"
+      ],
+      "arrival_date": "2026-09-01",
+      "status": "우선 검토",
+      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E9%98%B2%E6%B0%B4%E6%BC%82%E6%B5%81%E8%A2%8B",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "유모차 컵홀더 수납함",
       "category": "육아",
       "china_keyword": "婴儿车杯架收纳",
       "score": 87,
-      "reason": "육아 외출 불편 해결형",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 계절성 상승",
       "signals": [
         "계절 옷 정리 수요"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A9%B4%E5%84%BF%E8%BD%A6%E6%9D%AF%E6%9E%B6%E6%94%B6%E7%BA%B3"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A9%B4%E5%84%BF%E8%BD%A6%E6%9D%AF%E6%9E%B6%E6%94%B6%E7%BA%B3",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "열기구 수납 실리콘 매트",
       "category": "뷰티소품",
       "china_keyword": "卷发棒隔热垫",
       "score": 87,
-      "reason": "고데기·드라이기 정리 문제 해결",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 계절성 상승",
       "signals": [
         "계절 옷 정리 수요"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%8D%B7%E5%8F%91%E6%A3%92%E9%9A%94%E7%83%AD%E5%9E%AB"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%8D%B7%E5%8F%91%E6%A3%92%E9%9A%94%E7%83%AD%E5%9E%AB",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "옷장 칸막이 정리함",
       "category": "생활·수납",
       "china_keyword": "衣柜分隔收纳盒",
       "score": 86,
-      "reason": "정리 전후 비교가 쉬움",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 계절성 상승",
       "signals": [
         "계절 옷 정리 수요"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%A1%A3%E6%9F%9C%E5%88%86%E9%9A%94%E6%94%B6%E7%BA%B3%E7%9B%92"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%A1%A3%E6%9F%9C%E5%88%86%E9%9A%94%E6%94%B6%E7%BA%B3%E7%9B%92",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
-      "name": "싱크대 걸이형 음식물 거름망",
-      "category": "주방",
-      "china_keyword": "水槽挂式过滤网",
+      "name": "차량용 헤드레스트 후크",
+      "category": "자동차용품",
+      "china_keyword": "汽车头枕挂钩",
       "score": 86,
-      "reason": "반복 구매 가능성이 있는 생활소모품",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 자동차용품 카테고리 강세",
       "signals": [
-        "9월 판매 시작 기준 기본 후보"
+        "medicube Toner Pads Zero Pore Pad 2.0 | Dual-Textured Facial Pad for Exfoliation and Pore Care with 4.5% AHA Lactic Acid, 0.45%…",
+        "eos Shea Better Body Lotion Vanilla Cashmere, 24-Hour Moisture Skin Care, Lightweight & Non-Greasy, Natural Shea, Vegan, Vanilla…"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B0%B4%E6%A7%BD%E6%8C%82%E5%BC%8F%E8%BF%87%E6%BB%A4%E7%BD%91"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E5%A4%B4%E6%9E%95%E6%8C%82%E9%92%A9",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
-      "name": "반려동물 털 제거 롤러",
+      "name": "반려동물 산책 물병",
       "category": "반려동물",
-      "china_keyword": "宠物粘毛器",
+      "china_keyword": "宠物外出饮水杯",
       "score": 86,
-      "reason": "반복되는 털 문제 해결",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 반려동물 카테고리 강세",
       "signals": [
-        "9월 판매 시작 기준 기본 후보"
+        "Apple AirTag (2nd Generation): Tracker for Keychain, Wallet, and More; Locator with Sound; Simple One-Tap Setup with iPhone or…"
       ],
       "arrival_date": "2026-09-01",
       "status": "우선 검토",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%AE%A0%E7%89%A9%E7%B2%98%E6%AF%9B%E5%99%A8"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%AE%A0%E7%89%A9%E5%A4%96%E5%87%BA%E9%A5%AE%E6%B0%B4%E6%9D%AF",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "접이식 빨래바구니",
       "category": "생활·수납",
       "china_keyword": "折叠洗衣篮",
       "score": 85,
-      "reason": "접이식·공간절약형 생활용품",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 계절성 상승",
       "signals": [
         "계절 옷 정리 수요"
       ],
       "arrival_date": "2026-09-01",
       "status": "관찰 후보",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%8A%98%E5%8F%A0%E6%B4%97%E8%A1%A3%E7%AF%AE"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%8A%98%E5%8F%A0%E6%B4%97%E8%A1%A3%E7%AF%AE",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
-      "name": "강아지 발 세척컵",
-      "category": "반려동물",
-      "china_keyword": "宠物洗脚杯",
+      "name": "차량용 접이식 쓰레기통",
+      "category": "자동차용품",
+      "china_keyword": "汽车折叠垃圾桶",
       "score": 85,
-      "reason": "사용 전후 비교가 쉬움",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller · 자동차용품 카테고리 강세",
       "signals": [
-        "9월 판매 시작 기준 기본 후보"
+        "medicube Toner Pads Zero Pore Pad 2.0 | Dual-Textured Facial Pad for Exfoliation and Pore Care with 4.5% AHA Lactic Acid, 0.45%…",
+        "eos Shea Better Body Lotion Vanilla Cashmere, 24-Hour Moisture Skin Care, Lightweight & Non-Greasy, Natural Shea, Vegan, Vanilla…"
       ],
       "arrival_date": "2026-09-01",
       "status": "관찰 후보",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%AE%A0%E7%89%A9%E6%B4%97%E8%84%9A%E6%9D%AF"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E6%8A%98%E5%8F%A0%E5%9E%83%E5%9C%BE%E6%A1%B6",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "케이블 정리 클립",
       "category": "디지털소품",
       "china_keyword": "理线器 数据线固定夹",
       "score": 85,
-      "reason": "저가·가벼움·문제 해결형",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
       "signals": [
         "9월 판매 시작 기준 기본 후보"
       ],
       "arrival_date": "2026-09-01",
       "status": "관찰 후보",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%90%86%E7%BA%BF%E5%99%A8%20%E6%95%B0%E6%8D%AE%E7%BA%BF%E5%9B%BA%E5%AE%9A%E5%A4%B9"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%90%86%E7%BA%BF%E5%99%A8%20%E6%95%B0%E6%8D%AE%E7%BA%BF%E5%9B%BA%E5%AE%9A%E5%A4%B9",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     },
     {
       "name": "무선 미니 먼지청소기",
       "category": "청소",
       "china_keyword": "桌面迷你吸尘器",
       "score": 84,
-      "reason": "책상·차량용 시연이 쉬움",
+      "reason": "Google 검색량 증가 · 네이버 검색 증가 · Amazon Bestseller",
       "signals": [
         "9월 판매 시작 기준 기본 후보"
       ],
       "arrival_date": "2026-09-01",
       "status": "관찰 후보",
       "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%A1%8C%E9%9D%A2%E8%BF%B7%E4%BD%A0%E5%90%B8%E5%B0%98%E5%99%A8"
-    },
-    {
-      "name": "차량용 햇빛가리개",
-      "category": "자동차용품",
-      "china_keyword": "汽车遮阳帘",
-      "score": 84,
-      "reason": "더운 계절 차량용품 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E9%81%AE%E9%98%B3%E5%B8%98"
-    },
-    {
-      "name": "반려동물 산책 물병",
-      "category": "반려동물",
-      "china_keyword": "宠物外出饮水杯",
-      "score": 84,
-      "reason": "산책 장면에서 효용이 명확",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%AE%A0%E7%89%A9%E5%A4%96%E5%87%BA%E9%A5%AE%E6%B0%B4%E6%9D%AF"
-    },
-    {
-      "name": "화장대 회전 정리함",
-      "category": "뷰티소품",
-      "china_keyword": "旋转化妆品收纳盒",
-      "score": 84,
-      "reason": "정리 전후 영상에 적합",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%97%8B%E8%BD%AC%E5%8C%96%E5%A6%86%E5%93%81%E6%94%B6%E7%BA%B3%E7%9B%92"
-    },
-    {
-      "name": "벽부착 배수 비누받침",
-      "category": "욕실",
-      "china_keyword": "壁挂沥水皂盒",
-      "score": 84,
-      "reason": "무타공·배수 기능 시연 가능",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A3%81%E6%8C%82%E6%B2%A5%E6%B0%B4%E7%9A%82%E7%9B%92"
-    },
-    {
-      "name": "다용도 실리콘 물기 제거기",
-      "category": "청소",
-      "china_keyword": "硅胶刮水器",
-      "score": 83,
-      "reason": "욕실·주방 공용 사용 가능",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%A1%85%E8%83%B6%E5%88%AE%E6%B0%B4%E5%99%A8"
-    },
-    {
-      "name": "휴대용 방수 가방",
-      "category": "여행·캠핑",
-      "china_keyword": "防水漂流袋",
-      "score": 83,
-      "reason": "물놀이·여행 시즌 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E9%98%B2%E6%B0%B4%E6%BC%82%E6%B5%81%E8%A2%8B"
-    },
-    {
-      "name": "치약 디스펜서 수납 세트",
-      "category": "욕실",
-      "china_keyword": "牙膏挤压器 收纳套装",
-      "score": 83,
-      "reason": "가족 욕실 정리 수요",
-      "signals": [
-        "계절 옷 정리 수요"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%89%99%E8%86%8F%E6%8C%A4%E5%8E%8B%E5%99%A8%20%E6%94%B6%E7%BA%B3%E5%A5%97%E8%A3%85"
-    },
-    {
-      "name": "차량용 헤드레스트 후크",
-      "category": "자동차용품",
-      "china_keyword": "汽车头枕挂钩",
-      "score": 82,
-      "reason": "간단 설치·명확한 사용 장면",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E5%A4%B4%E6%9E%95%E6%8C%82%E9%92%A9"
-    },
-    {
-      "name": "접이식 노트북 거치대",
-      "category": "디지털소품",
-      "china_keyword": "折叠笔记本支架",
-      "score": 82,
-      "reason": "재택·사무 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%8A%98%E5%8F%A0%E7%AC%94%E8%AE%B0%E6%9C%AC%E6%94%AF%E6%9E%B6"
-    },
-    {
-      "name": "욕실 슬리퍼 건조 걸이",
-      "category": "욕실",
-      "china_keyword": "浴室拖鞋架 免打孔",
-      "score": 82,
-      "reason": "무타공·공간절약형",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B5%B4%E5%AE%A4%E6%8B%96%E9%9E%8B%E6%9E%B6%20%E5%85%8D%E6%89%93%E5%AD%94"
-    },
-    {
-      "name": "차량용 접이식 쓰레기통",
-      "category": "자동차용품",
-      "china_keyword": "汽车折叠垃圾桶",
-      "score": 81,
-      "reason": "차량 정리 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B1%BD%E8%BD%A6%E6%8A%98%E5%8F%A0%E5%9E%83%E5%9C%BE%E6%A1%B6"
-    },
-    {
-      "name": "아기 식탁 흡착 수납함",
-      "category": "육아",
-      "china_keyword": "婴儿餐椅吸盘收纳盒",
-      "score": 81,
-      "reason": "안전·소재 확인이 필요",
-      "signals": [
-        "계절 옷 정리 수요"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A9%B4%E5%84%BF%E9%A4%90%E6%A4%85%E5%90%B8%E7%9B%98%E6%94%B6%E7%BA%B3%E7%9B%92"
-    },
-    {
-      "name": "휴대용 기저귀 정리 파우치",
-      "category": "육아",
-      "china_keyword": "便携尿布收纳包",
-      "score": 81,
-      "reason": "외출 필수품 정리 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E4%BE%BF%E6%90%BA%E5%B0%BF%E5%B8%83%E6%94%B6%E7%BA%B3%E5%8C%85"
-    },
-    {
-      "name": "밀폐 날짜 표시 클립",
-      "category": "주방",
-      "china_keyword": "食品日期密封夹",
-      "score": 80,
-      "reason": "식품 보관 문제 해결형",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E9%A3%9F%E5%93%81%E6%97%A5%E6%9C%9F%E5%AF%86%E5%B0%81%E5%A4%B9"
-    },
-    {
-      "name": "접이식 피크닉 매트",
-      "category": "여행·캠핑",
-      "china_keyword": "折叠野餐垫",
-      "score": 80,
-      "reason": "야외활동 시즌 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%8A%98%E5%8F%A0%E9%87%8E%E9%A4%90%E5%9E%AB"
-    },
-    {
-      "name": "휴대용 브러시 세척통",
-      "category": "뷰티소품",
-      "china_keyword": "化妆刷清洗盒",
-      "score": 80,
-      "reason": "사용법 시연이 쉬움",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%8C%96%E5%A6%86%E5%88%B7%E6%B8%85%E6%B4%97%E7%9B%92"
-    },
-    {
-      "name": "멀티 충전선 정리 케이스",
-      "category": "디지털소품",
-      "china_keyword": "充电线收纳盒",
-      "score": 80,
-      "reason": "케이블 정리 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%85%85%E7%94%B5%E7%BA%BF%E6%94%B6%E7%BA%B3%E7%9B%92"
-    },
-    {
-      "name": "신발 세척 브러시 케이스",
-      "category": "청소",
-      "china_keyword": "鞋刷 清洁 收纳",
-      "score": 79,
-      "reason": "생활 불편 해결형",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E9%9E%8B%E5%88%B7%20%E6%B8%85%E6%B4%81%20%E6%94%B6%E7%BA%B3"
-    },
-    {
-      "name": "캠핑용 다기능 랜턴 걸이",
-      "category": "여행·캠핑",
-      "china_keyword": "露营灯挂钩 多功能",
-      "score": 79,
-      "reason": "캠핑 액세서리 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E9%9C%B2%E8%90%A5%E7%81%AF%E6%8C%82%E9%92%A9%20%E5%A4%9A%E5%8A%9F%E8%83%BD"
-    },
-    {
-      "name": "휴대폰 촬영 각도 거치대",
-      "category": "디지털소품",
-      "china_keyword": "手机拍摄支架 多角度",
-      "score": 79,
-      "reason": "콘텐츠 제작 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%89%8B%E6%9C%BA%E6%8B%8D%E6%91%84%E6%94%AF%E6%9E%B6%20%E5%A4%9A%E8%A7%92%E5%BA%A6"
-    },
-    {
-      "name": "샤워기 헤드 거치 클립",
-      "category": "욕실",
-      "china_keyword": "花洒支架 免打孔",
-      "score": 79,
-      "reason": "설치 전후 비교가 쉬움",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%8A%B1%E6%B4%92%E6%94%AF%E6%9E%B6%20%E5%85%8D%E6%89%93%E5%AD%94"
-    },
-    {
-      "name": "접이식 냄비받침",
-      "category": "주방",
-      "china_keyword": "折叠隔热垫",
-      "score": 78,
-      "reason": "작고 가벼워 배송 부담이 낮음",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%8A%98%E5%8F%A0%E9%9A%94%E7%83%AD%E5%9E%AB"
-    },
-    {
-      "name": "유모차 선풍기 거치대",
-      "category": "육아",
-      "china_keyword": "婴儿车风扇支架",
-      "score": 78,
-      "reason": "여름철 육아용품 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A9%B4%E5%84%BF%E8%BD%A6%E9%A3%8E%E6%89%87%E6%94%AF%E6%9E%B6"
-    },
-    {
-      "name": "자동차용 반려동물 안전벨트",
-      "category": "반려동물",
-      "china_keyword": "宠物汽车安全带",
-      "score": 77,
-      "reason": "안전 관련 수요, 규격 확인 필요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%AE%A0%E7%89%A9%E6%B1%BD%E8%BD%A6%E5%AE%89%E5%85%A8%E5%B8%A6"
-    },
-    {
-      "name": "화장품 샘플 파우치",
-      "category": "뷰티소품",
-      "china_keyword": "化妆品分装收纳包",
-      "score": 77,
-      "reason": "여행·휴대 수요",
-      "signals": [
-        "9월 판매 시작 기준 기본 후보"
-      ],
-      "arrival_date": "2026-09-01",
-      "status": "관찰 후보",
-      "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%8C%96%E5%A6%86%E5%93%81%E5%88%86%E8%A3%85%E6%94%B6%E7%BA%B3%E5%8C%85"
+      "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%A1%8C%E9%9D%A2%E8%BF%B7%E4%BD%A0%E5%90%B8%E5%B0%98%E5%99%A8",
+      "source": "catalog",
+      "source_label": "기본 추천",
+      "sources": [
+        "amazon",
+        "google",
+        "naver"
+      ]
     }
   ],
   "favorites": [],
-  "last_scan": "2026-08-02T11:55:11",
+  "last_scan": "2026-08-02T13:07:03",
   "scan_info": {
-    "trend_items": 37,
+    "trend_items": 57,
     "source_counts": {
       "google_KR": 10,
       "google_US": 10,
       "google_JP": 10,
       "naver": 7,
       "naver_fallback": 0,
-      "amazon": 0
+      "amazon": 20
     },
     "errors": [],
     "mode": "live"

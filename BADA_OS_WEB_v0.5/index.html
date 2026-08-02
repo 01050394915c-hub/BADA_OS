@@ -11,6 +11,7 @@ button{border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:poin
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0}.stat{padding:20px}.stat strong{display:block;font-size:30px;margin-top:8px}
 .panel{padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{border:1px solid #e1e5ef;border-radius:16px;padding:18px}
 .title{display:flex;justify-content:space-between}.score{font-size:26px;color:#4c63e7;font-weight:800}.tag{display:inline-block;padding:5px 8px;background:#f0efff;border-radius:7px;margin:8px 5px 8px 0}
+.source-summary{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.source-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#f7f8fb;color:#2f3a52;font-weight:700;border:1px solid #e1e5ef}
 .meta{font-size:14px;color:#627089;line-height:1.65}.reason{background:#f7f8fb;padding:12px;border-radius:10px;margin-top:10px}
 @media(max-width:900px){.stats,.grid{grid-template-columns:1fr}}
 </style>
@@ -27,7 +28,10 @@ button{border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:poin
 <div class="stat">관심상품<strong id="favorites">0개</strong></div>
 <div class="stat">확인한 상승어<strong id="trends">0개</strong></div>
 </section>
-<section class="panel"><div id="cards" class="grid"></div></section>
+<section class="panel">
+<div id="sourceSummary" class="source-summary">Google : 0개<br>Naver : 0개<br>Amazon : 0개</div>
+<div id="cards" class="grid"></div>
+</section>
 </main>
 <script>
 let data={candidates:[],favorites:[],scan_info:{}};
@@ -38,19 +42,29 @@ function render(){
  const googleCount=Object.keys(sourceCounts).filter(k=>k.startsWith('google_')).reduce((sum,k)=>sum+Number(sourceCounts[k]||0),0);
  const naverCount=Number(sourceCounts.naver||0);
  const amazonCount=Number(sourceCounts.amazon||0);
+ const sourceSummary = [
+  `<span class="source-pill">🟢 Google : ${googleCount}개</span>`,
+  `<span class="source-pill">🔵 Naver : ${naverCount}개</span>`,
+  `<span class="source-pill">🟠 Amazon : ${amazonCount}개</span>`
+ ].join('');
  document.getElementById('total').textContent=(data.candidates||[]).length+'개';
  document.getElementById('priority').textContent=(data.candidates||[]).filter(x=>x.status==='우선 검토').length+'개';
  document.getElementById('favorites').textContent=(data.favorites||[]).length+'개';
  document.getElementById('trends').textContent=(scanInfo.trend_items||0)+'개';
  document.getElementById('scanMeta').textContent=`Google ${googleCount}개 · 네이버 ${naverCount}개 · Amazon ${amazonCount}개`;
+ document.getElementById('sourceSummary').innerHTML=sourceSummary;
  document.getElementById('cards').innerHTML=(data.candidates||[]).map((x,i)=>{
-  const isAmazon = x.source === 'amazon' || !!x.amazon_url;
+  const isAmazon = String(x.source||'').toLowerCase() === 'amazon' || !!x.amazon_url;
   const sourceLabel = x.source_label || (isAmazon ? 'Amazon US' : '기본 추천');
   const buttonLabel = isAmazon ? 'Amazon 상품 페이지' : '1688 공급처 검색';
   const buttonUrl = isAmazon ? (x.amazon_url || x.search_url) : x.search_url;
-  const sourceBadges = (x.sources||[]).map((s)=>{
-   const label = s === 'google' ? 'Google' : s === 'naver' ? '네이버' : s === 'amazon' ? 'Amazon' : s;
-   return `<span class="tag">${label}</span>`;
+  const rawSources = Array.isArray(x.sources) ? x.sources : [];
+  const sourceKeys = [...new Set([].concat(rawSources, String(x.source||'').toLowerCase() === 'amazon' ? ['amazon'] : [], String(x.source||'').toLowerCase() === 'catalog' ? [] : []))];
+  const sourceBadges = sourceKeys.filter(Boolean).map((s)=>{
+   const key = String(s).toLowerCase();
+   const config = {google:{emoji:'🟢',label:'Google'}, naver:{emoji:'🔵',label:'Naver'}, amazon:{emoji:'🟠',label:'Amazon'}};
+   const item = config[key] || {emoji:'🔹',label:String(s)};
+   return `<span class="source-pill">${item.emoji} ${item.label}</span>`;
   }).join('');
   return `
  <article class="card"><div class="title"><h3>${i+1}. ${x.name}</h3><div class="score">${x.score}점</div></div>
