@@ -40,7 +40,7 @@ function render(){
  document.getElementById('priority').textContent=(data.candidates||[]).filter(x=>x.status==='우선 검토').length+'개';
  document.getElementById('favorites').textContent=(data.favorites||[]).length+'개';
  document.getElementById('trends').textContent=(scanInfo.trend_items||0)+'개';
- document.getElementById('scanMeta').textContent='Amazon 수집 '+amazonCount+'개';
+ document.getElementById('scanMeta').textContent=amazonCount>0 ? 'Amazon 수집 '+amazonCount+'개' : 'Amazon 수집 0개';
  document.getElementById('cards').innerHTML=(data.candidates||[]).map((x,i)=>{
   const isAmazon = x.source === 'amazon' || !!x.amazon_url;
   const sourceLabel = x.source_label || (isAmazon ? 'Amazon US' : '기본 추천');

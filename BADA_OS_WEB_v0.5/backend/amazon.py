@@ -40,7 +40,7 @@ class _AmazonLinkParser(HTMLParser):
         if not href:
             return False
         lower = href.lower()
-        return "/dp/" in lower or "/gp/product/" in lower or "/product/" in lower
+        return any(token in lower for token in ("/dp/", "/gp/product/", "/product/", "/b/", "/s?k="))
 
 
 def _normalize_text(value):
@@ -53,9 +53,9 @@ def _normalize_url(href):
 
 def _extract_category(html):
     for pattern in [
+        r"Best Sellers in ([^<]+)",
         r"<h1[^>]*>(.*?)</h1>",
         r"<h2[^>]*>(.*?)</h2>",
-        r"Best Sellers in ([^<]+)",
     ]:
         match = re.search(pattern, html, re.IGNORECASE | re.DOTALL)
         if match:
@@ -63,6 +63,26 @@ def _extract_category(html):
             if text:
                 return text
     return "Amazon Best Sellers"
+
+
+def _extract_from_regex(html):
+    results = []
+    for match in re.finditer(r'href="([^"]+)"', html):
+        href = match.group(1)
+        if not href.startswith("http"):
+            href = urllib.parse.urljoin("https://www.amazon.com", href)
+        if any(token in href for token in ("/dp/", "/gp/product/", "/product/", "/b/")):
+            results.append((href, ""))
+    return results
+
+
+def _extract_title_from_href(href):
+    if not href:
+        return "Amazon Product"
+    match = re.search(r'/dp/([A-Z0-9]{3,})', href, re.IGNORECASE)
+    if match:
+        return f"Amazon Product {match.group(1)}"
+    return "Amazon Product"
 
 
 def fetch_amazon_best_sellers(max_items=20):
@@ -82,16 +102,20 @@ def fetch_amazon_best_sellers(max_items=20):
     category = _extract_category(html)
     parser = _AmazonLinkParser()
     parser.feed(html)
+    pattern_results = _extract_from_regex(html)
 
+    combined = parser.results + pattern_results
     results = []
     seen = set()
 
-    for href, title in parser.results:
+    for href, title in combined:
         clean_title = _normalize_text(title)
         url = _normalize_url(href)
-        if not clean_title or len(clean_title) < 3 or len(clean_title) > 140:
+        if not clean_title:
+            clean_title = _extract_title_from_href(url)
+        if len(clean_title) < 3 or len(clean_title) > 140:
             continue
-        if any(token in clean_title.lower() for token in ("see more", "shop now", "customer reviews", "sign in")):
+        if any(token in clean_title.lower() for token in ("see more", "shop now", "customer reviews", "sign in", "amazon basics")):
             continue
         if url in seen or clean_title in seen:
             continue

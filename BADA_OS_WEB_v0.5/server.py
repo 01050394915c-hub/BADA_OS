@@ -70,6 +70,8 @@ def run_scan():
         rows = fetch_amazon_best_sellers(max_items=20)
         trends.extend(rows)
         source_counts["amazon"] = len(rows)
+        if not rows:
+            errors.append("Amazon: 수집 0개")
     except Exception as exc:
         source_counts["amazon"] = 0
         errors.append(f"Amazon: {type(exc).__name__}")
