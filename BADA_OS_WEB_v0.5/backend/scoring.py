@@ -83,6 +83,19 @@ def _seasonal(name, category, month):
     return bonus, reasons
 
 
+def _collect_sources(trends):
+    sources = set()
+    for item in trends:
+        source = str(item.get("source", "")).lower()
+        if source.startswith("google"):
+            sources.add("google")
+        elif source in {"naver", "naver-fallback"}:
+            sources.add("naver")
+        elif source == "amazon":
+            sources.add("amazon")
+    return sorted(sources)
+
+
 def _build_amazon_candidates(trends, arrival_date):
     rows = []
     for item in trends:
@@ -105,7 +118,8 @@ def _build_amazon_candidates(trends, arrival_date):
             "search_url": url,
             "amazon_url": url,
             "source": "amazon",
-            "source_label": "Amazon US"
+            "source_label": "Amazon US",
+            "sources": ["amazon"]
         })
     rows.sort(key=lambda x: x["score"], reverse=True)
     return rows
@@ -113,6 +127,7 @@ def _build_amazon_candidates(trends, arrival_date):
 
 def build_candidates(trends, arrival_date):
     hits, examples = _hits(trends)
+    sources = _collect_sources(trends)
     rows = []
     for category, name, china, base, reason in CATALOG:
         score = base
@@ -136,7 +151,8 @@ def build_candidates(trends, arrival_date):
             "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
             "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=" + urllib.parse.quote(china),
             "source": "catalog",
-            "source_label": "기본 추천"
+            "source_label": "기본 추천",
+            "sources": sources
         })
     rows.extend(_build_amazon_candidates(trends, arrival_date))
     rows.sort(key=lambda x: x["score"], reverse=True)
