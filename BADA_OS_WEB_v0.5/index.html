@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BADA OS v0.5</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#182033;font-family:Arial,"Noto Sans KR",sans-serif}
+header{background:#121827;color:#fff;padding:26px 32px;display:flex;justify-content:space-between}main{max-width:1320px;margin:24px auto;padding:0 20px}
+.hero,.panel,.stat{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(22,32,55,.06)}.hero{padding:30px;background:linear-gradient(135deg,#fff,#eef2ff)}
+button{border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:pointer}.primary{background:#4c63e7;color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0}.stat{padding:20px}.stat strong{display:block;font-size:30px;margin-top:8px}
+.panel{padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{border:1px solid #e1e5ef;border-radius:16px;padding:18px}
+.title{display:flex;justify-content:space-between}.score{font-size:26px;color:#4c63e7;font-weight:800}.tag{display:inline-block;padding:5px 8px;background:#f0efff;border-radius:7px;margin:8px 5px 8px 0}
+.meta{font-size:14px;color:#627089;line-height:1.65}.reason{background:#f7f8fb;padding:12px;border-radius:10px;margin-top:10px}
+@media(max-width:900px){.stats,.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div><h1>BADA OS</h1><div>Google Trends + 네이버 쇼핑 + 1688 연결</div></div><strong>WEB MVP v0.5</strong></header>
+<main>
+<section class="hero"><h2>오늘의 자동 소싱</h2><p>실시간 검색 신호와 30일 뒤 계절성을 합쳐 최대 40개 후보를 만듭니다.</p>
+<button class="primary" id="scanBtn">🚀 40개 자동 소싱 시작</button> <span id="status">아직 분석 전입니다.</span></section>
+<section class="stats">
+<div class="stat">전체 후보<strong id="total">0개</strong></div>
+<div class="stat">우선 검토<strong id="priority">0개</strong></div>
+<div class="stat">관심상품<strong id="favorites">0개</strong></div>
+<div class="stat">확인한 상승어<strong id="trends">0개</strong></div>
+</section>
+<section class="panel"><div id="cards" class="grid"></div></section>
+</main>
+<script>
+let data={candidates:[],favorites:[],scan_info:{}};
+async function load(){data=await (await fetch('/api/data')).json();render()}
+function render(){
+ document.getElementById('total').textContent=(data.candidates||[]).length+'개';
+ document.getElementById('priority').textContent=(data.candidates||[]).filter(x=>x.status==='우선 검토').length+'개';
+ document.getElementById('favorites').textContent=(data.favorites||[]).length+'개';
+ document.getElementById('trends').textContent=((data.scan_info||{}).trend_items||0)+'개';
+ document.getElementById('cards').innerHTML=(data.candidates||[]).map((x,i)=>`
+ <article class="card"><div class="title"><h3>${i+1}. ${x.name}</h3><div class="score">${x.score}점</div></div>
+ <span class="tag">${x.category}</span><span class="tag">${x.status}</span>
+ <div class="meta">판매 시작 예상: ${x.arrival_date}<br>중국어 검색어: ${x.china_keyword}<br>신호: ${(x.signals||[]).join(' · ')}</div>
+ <div class="reason"><b>추천 이유</b><br>${x.reason}<br><span class="meta">주의: ${x.risk}</span></div>
+ <p><a href="${x.search_url}" target="_blank"><button class="primary">1688 공급처 검색</button></a></p></article>`).join('');
+}
+document.getElementById('scanBtn').onclick=async()=>{
+ const b=document.getElementById('scanBtn'),s=document.getElementById('status');b.disabled=true;s.textContent='수집 중…';
+ try{data=await (await fetch('/api/scan',{method:'POST'})).json();if(data.error)throw Error(data.error);s.textContent='완료: 후보 '+data.candidates.length+'개 생성';render()}
+ catch(e){s.textContent='오류: '+e.message}finally{b.disabled=false}
+};load();
+</script>
+</body></html>
