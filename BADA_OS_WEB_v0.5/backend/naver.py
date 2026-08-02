@@ -1,4 +1,7 @@
-from playwright.sync_api import sync_playwright
+try:
+    from playwright.sync_api import sync_playwright
+except Exception:  # pragma: no cover - optional dependency
+    sync_playwright = None
 
 FALLBACK_KEYWORDS = [
     "차량용 틈새 수납함",
@@ -14,6 +17,9 @@ def _clean(value):
 def fetch_naver_keywords(max_items=20):
     results = []
     seen = set()
+
+    if sync_playwright is None:
+        return [{"title": x, "source": "naver-fallback", "region": "KR"} for x in FALLBACK_KEYWORDS[:max_items]]
 
     try:
         with sync_playwright() as playwright:

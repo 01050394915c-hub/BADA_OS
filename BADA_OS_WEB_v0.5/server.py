@@ -8,6 +8,7 @@ import webbrowser
 
 from backend.google_trends import fetch_google_trends
 from backend.naver import fetch_naver_keywords
+from backend.amazon import fetch_amazon_best_sellers
 from backend.scoring import build_candidates
 
 BASE = Path(__file__).resolve().parent
@@ -64,6 +65,14 @@ def run_scan():
         except Exception as exc:
             source_counts["naver"] = 0
             errors.append(f"Naver: {type(exc).__name__}")
+
+    try:
+        rows = fetch_amazon_best_sellers(max_items=20)
+        trends.extend(rows)
+        source_counts["amazon"] = len(rows)
+    except Exception as exc:
+        source_counts["amazon"] = 0
+        errors.append(f"Amazon: {type(exc).__name__}")
 
     arrival = datetime.now().date() + timedelta(days=lead_days)
     data["candidates"] = build_candidates(trends, arrival)[:40]
