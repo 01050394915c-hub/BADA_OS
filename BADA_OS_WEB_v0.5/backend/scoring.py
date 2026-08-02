@@ -82,6 +82,35 @@ def _seasonal(name, category, month):
         bonus += 3; reasons.append("겨울 실내·차량 정리 수요")
     return bonus, reasons
 
+
+def _build_amazon_candidates(trends, arrival_date):
+    rows = []
+    for item in trends:
+        if str(item.get("source", "")).lower() != "amazon":
+            continue
+        title = str(item.get("title") or "Amazon 상품").strip()
+        category = str(item.get("category") or "Amazon Best Sellers").strip()
+        url = str(item.get("url") or "").strip()
+        score = 88
+        rows.append({
+            "name": title,
+            "category": category,
+            "china_keyword": "",
+            "score": score,
+            "reason": "Amazon US Best Sellers 기준 인기 상품",
+            "signals": ["Amazon US", "Best Sellers"],
+            "arrival_date": arrival_date.isoformat(),
+            "status": "우선 검토",
+            "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
+            "search_url": url,
+            "amazon_url": url,
+            "source": "amazon",
+            "source_label": "Amazon US"
+        })
+    rows.sort(key=lambda x: x["score"], reverse=True)
+    return rows
+
+
 def build_candidates(trends, arrival_date):
     hits, examples = _hits(trends)
     rows = []
@@ -105,7 +134,10 @@ def build_candidates(trends, arrival_date):
             "arrival_date": arrival_date.isoformat(),
             "status": "우선 검토" if score >= 86 else "관찰 후보",
             "risk": "KC·상표권·디자인권·실제 쿠팡 경쟁도 확인 필요",
-            "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=" + urllib.parse.quote(china)
+            "search_url": "https://s.1688.com/selloffer/offer_search.htm?keywords=" + urllib.parse.quote(china),
+            "source": "catalog",
+            "source_label": "기본 추천"
         })
+    rows.extend(_build_amazon_candidates(trends, arrival_date))
     rows.sort(key=lambda x: x["score"], reverse=True)
-    return rows
+    return rows[:40]

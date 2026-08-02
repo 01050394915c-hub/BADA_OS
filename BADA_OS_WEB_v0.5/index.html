@@ -19,7 +19,8 @@ button{border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:poin
 <header><div><h1>BADA OS</h1><div>Google Trends + 네이버 쇼핑 + 1688 연결</div></div><strong>WEB MVP v0.5</strong></header>
 <main>
 <section class="hero"><h2>오늘의 자동 소싱</h2><p>실시간 검색 신호와 30일 뒤 계절성을 합쳐 최대 40개 후보를 만듭니다.</p>
-<button class="primary" id="scanBtn">🚀 40개 자동 소싱 시작</button> <span id="status">아직 분석 전입니다.</span></section>
+<button class="primary" id="scanBtn">🚀 40개 자동 소싱 시작</button> <span id="status">아직 분석 전입니다.</span>
+<div id="scanMeta" class="meta" style="margin-top:10px;">Amazon 수집 0개</div></section>
 <section class="stats">
 <div class="stat">전체 후보<strong id="total">0개</strong></div>
 <div class="stat">우선 검토<strong id="priority">0개</strong></div>
@@ -32,20 +33,30 @@ button{border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:poin
 let data={candidates:[],favorites:[],scan_info:{}};
 async function load(){data=await (await fetch('/api/data')).json();render()}
 function render(){
+ const scanInfo=(data.scan_info||{});
+ const sourceCounts=scanInfo.source_counts||{};
+ const amazonCount=Number(sourceCounts.amazon||0);
  document.getElementById('total').textContent=(data.candidates||[]).length+'개';
  document.getElementById('priority').textContent=(data.candidates||[]).filter(x=>x.status==='우선 검토').length+'개';
  document.getElementById('favorites').textContent=(data.favorites||[]).length+'개';
- document.getElementById('trends').textContent=((data.scan_info||{}).trend_items||0)+'개';
- document.getElementById('cards').innerHTML=(data.candidates||[]).map((x,i)=>`
+ document.getElementById('trends').textContent=(scanInfo.trend_items||0)+'개';
+ document.getElementById('scanMeta').textContent='Amazon 수집 '+amazonCount+'개';
+ document.getElementById('cards').innerHTML=(data.candidates||[]).map((x,i)=>{
+  const isAmazon = x.source === 'amazon' || !!x.amazon_url;
+  const sourceLabel = x.source_label || (isAmazon ? 'Amazon US' : '기본 추천');
+  const buttonLabel = isAmazon ? 'Amazon 상품 페이지' : '1688 공급처 검색';
+  const buttonUrl = isAmazon ? (x.amazon_url || x.search_url) : x.search_url;
+  return `
  <article class="card"><div class="title"><h3>${i+1}. ${x.name}</h3><div class="score">${x.score}점</div></div>
  <span class="tag">${x.category}</span><span class="tag">${x.status}</span>
- <div class="meta">판매 시작 예상: ${x.arrival_date}<br>중국어 검색어: ${x.china_keyword}<br>신호: ${(x.signals||[]).join(' · ')}</div>
+ <div class="meta">출처: ${sourceLabel}<br>판매 시작 예상: ${x.arrival_date}<br>중국어 검색어: ${x.china_keyword}<br>신호: ${(x.signals||[]).join(' · ')}</div>
  <div class="reason"><b>추천 이유</b><br>${x.reason}<br><span class="meta">주의: ${x.risk}</span></div>
- <p><a href="${x.search_url}" target="_blank"><button class="primary">1688 공급처 검색</button></a></p></article>`).join('');
+ <p><a href="${buttonUrl}" target="_blank"><button class="primary">${buttonLabel}</button></a></p></article>`;
+ }).join('');
 }
 document.getElementById('scanBtn').onclick=async()=>{
  const b=document.getElementById('scanBtn'),s=document.getElementById('status');b.disabled=true;s.textContent='수집 중…';
- try{data=await (await fetch('/api/scan',{method:'POST'})).json();if(data.error)throw Error(data.error);s.textContent='완료: 후보 '+data.candidates.length+'개 생성';render()}
+ try{data=await (await fetch('/api/scan',{method:'POST'})).json();if(data.error)throw Error(data.error);render();const amazonCount=Number(((data.scan_info||{}).source_counts||{}).amazon||0);s.textContent='완료: 후보 '+data.candidates.length+'개 생성 / Amazon 수집 '+amazonCount+'개';}
  catch(e){s.textContent='오류: '+e.message}finally{b.disabled=false}
 };load();
 </script>
