@@ -3,14 +3,6 @@ try:
 except Exception:  # pragma: no cover - optional dependency
     sync_playwright = None
 
-FALLBACK_KEYWORDS = [
-    "차량용 틈새 수납함",
-    "여행 압축 파우치",
-    "반려동물 산책 물병",
-    "냉장고 회전 정리 트레이",
-    "창문 틈새 청소 브러시",
-]
-
 def _clean(value):
     return " ".join((value or "").split()).strip()
 
@@ -19,7 +11,7 @@ def fetch_naver_keywords(max_items=20):
     seen = set()
 
     if sync_playwright is None:
-        return [{"title": x, "source": "naver-fallback", "region": "KR"} for x in FALLBACK_KEYWORDS[:max_items]]
+        return []
 
     try:
         with sync_playwright() as playwright:
@@ -62,4 +54,4 @@ def fetch_naver_keywords(max_items=20):
     if results:
         return results[:max_items]
 
-    return [{"title": x, "source": "naver-fallback", "region": "KR"} for x in FALLBACK_KEYWORDS[:max_items]]
+    return []

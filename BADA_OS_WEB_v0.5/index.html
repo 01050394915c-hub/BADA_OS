@@ -1,83 +1,1294 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BADA OS v0.5</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#182033;font-family:Arial,"Noto Sans KR",sans-serif}
-header{background:#121827;color:#fff;padding:26px 32px;display:flex;justify-content:space-between}main{max-width:1320px;margin:24px auto;padding:0 20px}
-.hero,.panel,.stat{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(22,32,55,.06)}.hero{padding:30px;background:linear-gradient(135deg,#fff,#eef2ff)}
-button{border:0;border-radius:10px;padding:13px 18px;font-weight:700;cursor:pointer}.primary{background:#4c63e7;color:#fff}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0}.stat{padding:20px}.stat strong{display:block;font-size:30px;margin-top:8px}
-.panel{padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{border:1px solid #e1e5ef;border-radius:16px;padding:18px}
-.title{display:flex;justify-content:space-between}.score{font-size:26px;color:#4c63e7;font-weight:800}.tag{display:inline-block;padding:5px 8px;background:#f0efff;border-radius:7px;margin:8px 5px 8px 0}
-.source-summary{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.source-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#f7f8fb;color:#2f3a52;font-weight:700;border:1px solid #e1e5ef}
-.meta{font-size:14px;color:#627089;line-height:1.65}.reason{background:#f7f8fb;padding:12px;border-radius:10px;margin-top:10px}
-@media(max-width:900px){.stats,.grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BADA OS v0.8</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --panel: #ffffff;
+      --line: #e2e7f0;
+      --text: #1a2135;
+      --muted: #65728a;
+      --primary: #4c63e7;
+      --danger: #cf4040;
+      --sidebar: #121827;
+      --sidebar-muted: #aeb7cc;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, "Noto Sans KR", sans-serif;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 230px;
+      height: 100vh;
+      background: var(--sidebar);
+      color: #fff;
+      padding: 18px;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      overflow: auto;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .menu button {
+      width: 100%;
+      margin-bottom: 8px;
+      padding: 11px 12px;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--sidebar-muted);
+      text-align: left;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .menu button:hover,
+    .menu button.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .content {
+      margin-left: 230px;
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    header span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1240px;
+      margin: 24px auto;
+      padding: 0 20px 40px;
+    }
+
+    .hero,
+    .panel,
+    .stat {
+      background: var(--panel);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(20, 30, 60, 0.07);
+    }
+
+    .hero {
+      padding: 24px;
+      margin-bottom: 18px;
+      background: linear-gradient(130deg, #ffffff, #edf2ff);
+    }
+
+    .hero h3 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 28px;
+    }
+
+    .panel {
+      padding: 16px;
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .input {
+      width: 100%;
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 14px;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .primary {
+      border: 0;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      padding: 10px 14px;
+      font-size: 14px;
+    }
+
+    .primary[disabled] {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .subtle {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      cursor: pointer;
+      padding: 10px 14px;
+      font-size: 14px;
+    }
+
+    .meta {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .source-pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      margin: 4px 6px 0 0;
+      font-size: 12px;
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .title h3 {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .score {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .tag {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #36435f;
+      background: #f0f4ff;
+      border-radius: 8px;
+      padding: 4px 8px;
+      display: inline-block;
+    }
+
+    .reason {
+      margin-top: 10px;
+      color: #3e4b66;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .detail-actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    #placeholderPage {
+      display: none;
+      margin-top: 30px;
+    }
+
+    #placeholderPage.active {
+      display: block;
+    }
+
+    #favoritesPage,
+    #costPage {
+      display: none;
+    }
+
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 14, 28, 0.55);
+      align-items: center;
+      justify-content: center;
+      z-index: 90;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      width: min(700px, 100%);
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      padding: 18px;
+    }
+
+    .modal h3 {
+      margin: 0 0 8px;
+    }
+
+    .modal .close {
+      float: right;
+      border: 0;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: #8792a8;
+    }
+
+    @media (max-width: 980px) {
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .stats,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-<header><div><h1>BADA OS</h1><div>Google Trends + 네이버 쇼핑 + 1688 연결</div></div><strong>WEB MVP v0.5</strong></header>
-<main>
-<section class="hero"><h2>오늘의 자동 소싱</h2><p>실시간 검색 신호와 30일 뒤 계절성을 합쳐 최대 40개 후보를 만듭니다.</p>
-<button class="primary" id="scanBtn">🚀 40개 자동 소싱 시작</button> <span id="status">아직 분석 전입니다.</span>
-<div id="scanMeta" class="meta" style="margin-top:10px;">Google 0개 · 네이버 0개 · Amazon 0개</div></section>
-<section class="stats">
-<div class="stat">전체 후보<strong id="total">0개</strong></div>
-<div class="stat">우선 검토<strong id="priority">0개</strong></div>
-<div class="stat">관심상품<strong id="favorites">0개</strong></div>
-<div class="stat">확인한 상승어<strong id="trends">0개</strong></div>
-</section>
-<section class="panel">
-<div id="sourceSummary" class="source-summary">Google : 0개<br>Naver : 0개<br>Amazon : 0개</div>
-<div id="cards" class="grid"></div>
-</section>
-</main>
-<script>
-let data={candidates:[],favorites:[],scan_info:{}};
-async function load(){data=await (await fetch('/api/data')).json();render()}
-function render(){
- const scanInfo=(data.scan_info||{});
- const sourceCounts=scanInfo.source_counts||{};
- const googleCount=Object.keys(sourceCounts).filter(k=>k.startsWith('google_')).reduce((sum,k)=>sum+Number(sourceCounts[k]||0),0);
- const naverCount=Number(sourceCounts.naver||0);
- const amazonCount=Number(sourceCounts.amazon||0);
- const sourceSummary = [
-  `<span class="source-pill">🟢 Google : ${googleCount}개</span>`,
-  `<span class="source-pill">🔵 Naver : ${naverCount}개</span>`,
-  `<span class="source-pill">🟠 Amazon : ${amazonCount}개</span>`
- ].join('');
- document.getElementById('total').textContent=(data.candidates||[]).length+'개';
- document.getElementById('priority').textContent=(data.candidates||[]).filter(x=>x.status==='우선 검토').length+'개';
- document.getElementById('favorites').textContent=(data.favorites||[]).length+'개';
- document.getElementById('trends').textContent=(scanInfo.trend_items||0)+'개';
- document.getElementById('scanMeta').textContent=`Google ${googleCount}개 · 네이버 ${naverCount}개 · Amazon ${amazonCount}개`;
- document.getElementById('sourceSummary').innerHTML=sourceSummary;
- document.getElementById('cards').innerHTML=(data.candidates||[]).map((x,i)=>{
-  const isAmazon = String(x.source||'').toLowerCase() === 'amazon' || !!x.amazon_url;
-  const sourceLabel = x.source_label || (isAmazon ? 'Amazon US' : '기본 추천');
-  const buttonLabel = isAmazon ? 'Amazon 상품 페이지' : '1688 공급처 검색';
-  const buttonUrl = isAmazon ? (x.amazon_url || x.search_url) : x.search_url;
-  const rawSources = Array.isArray(x.sources) ? x.sources : [];
-  const sourceKeys = [...new Set([].concat(rawSources, String(x.source||'').toLowerCase() === 'amazon' ? ['amazon'] : [], String(x.source||'').toLowerCase() === 'catalog' ? [] : []))];
-  const sourceBadges = sourceKeys.filter(Boolean).map((s)=>{
-   const key = String(s).toLowerCase();
-   const config = {google:{emoji:'🟢',label:'Google'}, naver:{emoji:'🔵',label:'Naver'}, amazon:{emoji:'🟠',label:'Amazon'}};
-   const item = config[key] || {emoji:'🔹',label:String(s)};
-   return `<span class="source-pill">${item.emoji} ${item.label}</span>`;
-  }).join('');
-  return `
- <article class="card"><div class="title"><h3>${i+1}. ${x.name}</h3><div class="score">${x.score}점</div></div>
- <span class="tag">${x.category}</span><span class="tag">${x.status}</span>${sourceBadges ? `<div style="margin-top:8px">${sourceBadges}</div>` : ''}
- <div class="meta">출처: ${sourceLabel}<br>판매 시작 예상: ${x.arrival_date}<br>중국어 검색어: ${x.china_keyword}<br>신호: ${(x.signals||[]).join(' · ')}</div>
- <div class="reason"><b>추천 이유</b><br>${x.reason}<br><span class="meta">주의: ${x.risk}</span></div>
- <p><a href="${buttonUrl}" target="_blank"><button class="primary">${buttonLabel}</button></a></p></article>`;
- }).join('');
-}
-document.getElementById('scanBtn').onclick=async()=>{
- const b=document.getElementById('scanBtn'),s=document.getElementById('status');b.disabled=true;s.textContent='수집 중…';
- try{data=await (await fetch('/api/scan',{method:'POST'})).json();if(data.error)throw Error(data.error);render();const sourceCounts=((data.scan_info||{}).source_counts||{});const googleCount=Object.keys(sourceCounts).filter(k=>k.startsWith('google_')).reduce((sum,k)=>sum+Number(sourceCounts[k]||0),0);const naverCount=Number(sourceCounts.naver||0);const amazonCount=Number(sourceCounts.amazon||0);s.textContent='완료: 후보 '+data.candidates.length+'개 생성 / Google '+googleCount+'개 · 네이버 '+naverCount+'개 · Amazon '+amazonCount+'개';}
- catch(e){s.textContent='오류: '+e.message}finally{b.disabled=false}
-};load();
-</script>
-</body></html>
+  <aside class="sidebar">
+    <div class="brand">BADA OS</div>
+    <div class="menu">
+      <button data-page="dashboard" class="active">대시보드</button>
+      <button data-page="today">오늘 추천</button>
+      <button data-page="favorites">관심상품</button>
+      <button data-page="source1688">1688 분석</button>
+      <button data-page="cost">원가 계산</button>
+      <button data-page="selling">판매중</button>
+      <button data-page="settings">설정</button>
+    </div>
+  </aside>
+
+  <div class="content">
+    <header>
+      <h2 id="pageTitle">대시보드</h2>
+      <span>BADA OS Web</span>
+    </header>
+
+    <main>
+      <section id="dashboardPage">
+        <div class="hero">
+          <h3>40개 자동 소싱</h3>
+          <p>Google Trends + Naver 데이터를 수집하고, 중복 제거 후 점수 기반으로 상위 40개를 추천합니다.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><div class="label">저장된 후보</div><strong id="total">0개</strong></div>
+          <div class="stat"><div class="label">우선 검토</div><strong id="priority">0개</strong></div>
+          <div class="stat"><div class="label">관심상품</div><strong id="favorites">0개</strong></div>
+          <div class="stat"><div class="label">총 수집</div><strong id="trends">0개</strong></div>
+        </div>
+
+        <div class="panel">
+          <div class="row">
+            <button class="primary" id="scanBtn" type="button">40개 자동 소싱 시작</button>
+            <span id="status" class="meta"></span>
+          </div>
+          <div id="scanMeta" class="meta" style="margin-top:10px;"></div>
+          <div id="sourceSummary" style="margin-top:6px;"></div>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin:0 0 12px;">추천 후보</h3>
+          <div id="cards" class="grid"></div>
+        </div>
+      </section>
+
+      <section id="todayPage" style="display:none;">
+        <div class="panel">
+          <h3 style="margin:0 0 12px;">오늘 추천 상위 10개</h3>
+          <div id="todayCards" class="grid"></div>
+        </div>
+        <div class="panel">
+          <h3 style="margin:0 0 12px;">승인 대기 목록</h3>
+          <div id="pendingCards" class="grid"></div>
+        </div>
+      </section>
+
+      <section id="favoritesPage">
+        <div class="panel">
+          <div class="row">
+            <input id="favoritesSearch" class="input" placeholder="한글/원문 상품명 검색" style="max-width:420px;">
+            <button class="subtle" type="button" onclick="renderFavoritesPage()">검색</button>
+            <button class="subtle" type="button" id="backDashboard">대시보드로</button>
+          </div>
+        </div>
+        <div id="favoritesList" class="grid"></div>
+      </section>
+
+      <section id="costPage">
+        <div class="panel">
+          <h3 style="margin-top:0;">1688 분석</h3>
+          <div class="row">
+            <input id="url1688" class="input" placeholder="1688 상품 URL 입력">
+            <button class="primary" type="button" onclick="analyze1688()">분석</button>
+            <button class="subtle" type="button" onclick="saveFavoriteFromAnalysis()">관심상품 저장</button>
+          </div>
+          <div style="margin-top:10px;" class="row">
+            <button class="subtle" type="button" onclick="generateSellingTitle()">판매용 상품명 생성</button>
+          </div>
+          <div id="sellingTitleResult" class="meta"></div>
+          <div id="analysisResult" class="meta"></div>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin-top:0;">원가 계산기</h3>
+          <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
+            <input id="costCny" class="input" placeholder="상품 원가 (CNY)">
+            <input id="exchangeRate" class="input" placeholder="환율 (예: 185)" value="185">
+            <input id="chinaShipping" class="input" placeholder="중국 내 배송비 (원)" value="0">
+            <input id="globalShipping" class="input" placeholder="국제 배송비 (원)" value="0">
+            <input id="taxCost" class="input" placeholder="관부가세/기타 (원)" value="0">
+            <input id="coupangFee" class="input" placeholder="쿠팡 수수료율 (%)" value="11">
+            <input id="targetMargin" class="input" placeholder="목표 마진율 (%)" value="30">
+          </div>
+          <div style="margin-top:10px;">
+            <button class="primary" type="button" onclick="calculateCost()">계산</button>
+          </div>
+          <div id="costResult" class="meta" style="margin-top:10px;"></div>
+        </div>
+      </section>
+
+      <section id="placeholderPage" class="panel">
+        <h3 id="placeholderTitle" style="margin-top:0;">준비 중</h3>
+        <p id="placeholderText" class="meta">다음 단계에서 연결 예정입니다.</p>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="detailBackdrop" aria-hidden="true" onclick="if(event.target===this)closeDetailModal()">
+    <div class="modal">
+      <button class="close" type="button" onclick="closeDetailModal()">×</button>
+      <h3 id="detailName">상품 상세</h3>
+      <div id="detailSubtitle" class="meta"></div>
+      <div id="detailScore" class="meta"></div>
+      <div id="detailSources" class="meta"></div>
+      <div id="detailCategory" class="meta"></div>
+      <div id="detailRecommend" class="meta"></div>
+      <div id="detailSignals" class="meta"></div>
+      <div id="detailChinaKeyword" class="meta"></div>
+      <div id="detailReason" class="meta"></div>
+      <div id="detailRisk" class="meta"></div>
+      <a id="detailLink" href="#" target="_blank" rel="noopener noreferrer">
+        <button class="primary" type="button">원문 보기</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    let data = { candidates: [], favorites: [], scan_info: {} };
+    let latest1688Analysis = null;
+    let latestCoupangMarket = null;
+    let latestSellingTitle = "";
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function getStatusLabel(status) {
+      const key = String(status || "").trim();
+      if (key === "approval_pending") return "승인 대기";
+      if (key === "approved") return "승인 완료";
+      if (key === "rejected") return "거절";
+      return key || "검토 필요";
+    }
+
+    async function load() {
+      const response = await fetch("/api/data");
+      data = await response.json();
+      if (!Array.isArray(data.candidates)) data.candidates = [];
+      if (!Array.isArray(data.favorites)) data.favorites = [];
+      if (!data.scan_info) data.scan_info = {};
+      render();
+    }
+
+    function render() {
+      const scanInfo = data.scan_info || {};
+      const sourceCounts = scanInfo.source_counts || {};
+      const googleCount = Number(sourceCounts.google || 0);
+      const naverCount = Number(sourceCounts.naver || 0);
+      const amazonCount = Number(sourceCounts.amazon || 0);
+      const totalCollected = Number(scanInfo.total_collected || 0);
+      const totalSaved = Number(scanInfo.total_saved || data.candidates.length);
+      const errors = Array.isArray(scanInfo.errors) ? scanInfo.errors : [];
+
+      document.getElementById("total").textContent = `${data.candidates.length}개`;
+      document.getElementById("priority").textContent = `${data.candidates.filter((x) => x.status === "우선 검토").length}개`;
+      document.getElementById("favorites").textContent = `${data.favorites.length}개`;
+      document.getElementById("trends").textContent = `${totalCollected}개`;
+
+      document.getElementById("scanMeta").textContent =
+        `전체 수집 ${totalCollected}개 · 저장 ${totalSaved}개 · Google ${googleCount}개 · Naver ${naverCount}개 · Amazon ${amazonCount}개`;
+
+      const sourceNotes = scanInfo.source_notes || {};
+      const noteText = [
+        `Google: ${sourceNotes.google || "실데이터"}`,
+        `Naver: ${sourceNotes.naver || "환경 제한 가능"}`,
+        `Amazon: ${sourceNotes.amazon || "실데이터"}`,
+      ].join(" | ");
+
+      document.getElementById("sourceSummary").innerHTML =
+        `<span class="source-pill">Google ${googleCount}개</span>` +
+        `<span class="source-pill">Naver ${naverCount}개</span>` +
+        `<span class="source-pill">Amazon ${amazonCount}개</span>` +
+        `<div class="meta">${escapeHtml(noteText)}</div>` +
+        (errors.length ? `<div class="meta" style="color:#cf4040;">오류 소스: ${escapeHtml(errors.join(" | "))}</div>` : "");
+
+      const cards = document.getElementById("cards");
+      if (!data.candidates.length) {
+        cards.innerHTML = '<div class="card" style="grid-column:1/-1;color:#65728a;">아직 스캔된 후보가 없습니다.</div>';
+      } else {
+        cards.innerHTML = data.candidates.map((x, i) => {
+          const keyword = escapeHtml(x.keyword || x.name || "키워드 없음");
+          const category = escapeHtml(x.category || "생활용품");
+          const source = escapeHtml(x.source || x.source_label || "unknown");
+          const status = escapeHtml(getStatusLabel(x.status));
+          const score = Number(x.score || 0);
+          const recommendReasons = Array.isArray(x.recommend_reasons) && x.recommend_reasons.length
+            ? x.recommend_reasons.map((r) => `• ${escapeHtml(r)}`).join("<br>")
+            : "• 트렌드 기반 검토 필요";
+          const reasons = Array.isArray(x.reasons) && x.reasons.length
+            ? x.reasons.map((r) => `• ${escapeHtml(r)}`).join("<br>")
+            : escapeHtml(x.reason || "추천 이유 정보 없음");
+
+          return `
+            <div class="card">
+              <div class="title">
+                <h3>${keyword}</h3>
+                <div class="score">${score}점</div>
+              </div>
+              <div class="tag">카테고리: ${category}</div>
+              <div class="tag">출처: ${source}</div>
+              <div class="tag">상태: ${status}</div>
+              <div class="reason"><strong>추천 이유</strong><br>${recommendReasons}</div>
+              <div class="reason">${reasons}</div>
+              <div class="detail-actions">
+                <button class="subtle" type="button" onclick="openDetail(${i})">상세</button>
+                <button class="primary" type="button" onclick="saveScannedCandidate(${i})">관심상품 저장</button>
+                <button class="primary" type="button" onclick="markCandidatePending(${i})">승인 대기</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      const todayCards = document.getElementById("todayCards");
+      const todayTop = [...data.candidates]
+        .sort((a, b) => Number(b.score || 0) - Number(a.score || 0))
+        .slice(0, 10);
+      if (!todayTop.length) {
+        todayCards.innerHTML = '<div class="card" style="grid-column:1/-1;color:#65728a;">표시할 추천 후보가 없습니다.</div>';
+      } else {
+        todayCards.innerHTML = todayTop.map((x) => {
+          const keyword = escapeHtml(x.keyword || x.name || "키워드 없음");
+          const category = escapeHtml(x.category || "생활용품");
+          const source = escapeHtml(x.source || x.source_label || "unknown");
+          const status = escapeHtml(getStatusLabel(x.status));
+          const score = Number(x.score || 0);
+          const recommendReasons = Array.isArray(x.recommend_reasons) && x.recommend_reasons.length
+            ? x.recommend_reasons.map((r) => `• ${escapeHtml(r)}`).join("<br>")
+            : "• 트렌드 기반 검토 필요";
+          return `
+            <div class="card">
+              <div class="title">
+                <h3>${keyword}</h3>
+                <div class="score">${score}점</div>
+              </div>
+              <div class="tag">카테고리: ${category}</div>
+              <div class="tag">출처: ${source}</div>
+              <div class="tag">상태: ${status}</div>
+              <div class="reason"><strong>추천 이유</strong><br>${recommendReasons}</div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      const pendingCards = document.getElementById("pendingCards");
+      const pendingCandidates = data.candidates.filter((x) => String(x.status || "") === "approval_pending");
+      if (!pendingCandidates.length) {
+        pendingCards.innerHTML = '<div class="card" style="grid-column:1/-1;color:#65728a;">승인 대기 중인 후보가 없습니다.</div>';
+      } else {
+        pendingCards.innerHTML = pendingCandidates.map((x) => {
+          const keyword = escapeHtml(x.keyword || x.name || "키워드 없음");
+          const source = escapeHtml(x.source || x.source_label || "unknown");
+          const score = Number(x.score || 0);
+          const candidateId = escapeHtml(x.id || "");
+          const recommendReasons = Array.isArray(x.recommend_reasons) && x.recommend_reasons.length
+            ? x.recommend_reasons.map((r) => `• ${escapeHtml(r)}`).join("<br>")
+            : "• 트렌드 기반 검토 필요";
+          return `
+            <div class="card">
+              <div class="title">
+                <h3>${keyword}</h3>
+                <div class="score">${score}점</div>
+              </div>
+              <div class="tag">출처: ${source}</div>
+              <div class="reason"><strong>추천 이유</strong><br>${recommendReasons}</div>
+              <div class="detail-actions">
+                <button class="primary" type="button" onclick="approvePendingCandidate('${candidateId}')">승인</button>
+                <button class="subtle" type="button" style="border-color:#cf4040;color:#cf4040;" onclick="rejectPendingCandidate('${candidateId}')">거절</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+    }
+
+    function openDetail(index) {
+      const x = data.candidates[index];
+      if (!x) return;
+      document.getElementById("detailName").textContent = x.name || x.keyword || "상품 상세";
+      document.getElementById("detailSubtitle").textContent = `${x.status || ""} · 생성일 ${x.created_at || "-"}`;
+      document.getElementById("detailScore").textContent = `${x.score || 0}점`;
+      document.getElementById("detailSources").textContent = `출처: ${x.source || "-"}`;
+      document.getElementById("detailCategory").textContent = `카테고리: ${x.category || "생활용품"}`;
+      document.getElementById("detailRecommend").textContent = `추천 이유: ${(x.recommend_reasons || []).join(" · ") || "트렌드 기반 검토 필요"}`;
+      document.getElementById("detailSignals").textContent = `신호: ${(x.signals || []).join(" · ") || "없음"}`;
+      document.getElementById("detailChinaKeyword").textContent = `키워드: ${x.keyword || "-"}`;
+      document.getElementById("detailReason").textContent = `사유: ${x.reason || "-"}`;
+      document.getElementById("detailRisk").textContent = `리스크: ${x.risk || "-"}`;
+      const link = x.search_url || "#";
+      const detailLink = document.getElementById("detailLink");
+      detailLink.href = link;
+      detailLink.style.display = link && link !== "#" ? "inline-block" : "none";
+      const backdrop = document.getElementById("detailBackdrop");
+      backdrop.classList.add("open");
+      backdrop.setAttribute("aria-hidden", "false");
+    }
+
+    function closeDetailModal() {
+      const backdrop = document.getElementById("detailBackdrop");
+      backdrop.classList.remove("open");
+      backdrop.setAttribute("aria-hidden", "true");
+    }
+
+    function showPage(page) {
+      const labels = {
+        dashboard: ["대시보드", ""],
+        today: ["오늘 추천", "점수 상위 10개 추천 후보를 표시합니다."],
+        favorites: ["관심상품", "저장한 상품을 모아보는 기능을 다음 단계에서 연결합니다."],
+        source1688: ["1688 분석", "1688 링크 분석 기능을 안정적으로 다시 연결할 예정입니다."],
+        cost: ["원가 계산", "원가 계산기를 통해 판매가와 수익성을 바로 확인할 수 있습니다."],
+        selling: ["판매중", "조사중·샘플주문·판매중 상태 관리 기능을 연결할 예정입니다."],
+        settings: ["설정", "목표 마진율·수수료·광고비·포장비 설정 기능을 연결할 예정입니다."],
+      };
+
+      document.querySelectorAll(".menu button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.page === page);
+      });
+
+      const isDashboard = page === "dashboard";
+      const isToday = page === "today";
+      const isFavorites = page === "favorites";
+      const isCost = page === "cost" || page === "source1688";
+
+      document.getElementById("dashboardPage").style.display = isDashboard ? "block" : "none";
+      document.getElementById("todayPage").style.display = isToday ? "block" : "none";
+      document.getElementById("favoritesPage").style.display = isFavorites ? "block" : "none";
+      document.getElementById("costPage").style.display = isCost ? "block" : "none";
+      document.getElementById("placeholderPage").classList.toggle("active", !isDashboard && !isToday && !isFavorites && !isCost);
+
+      if (isFavorites) {
+        loadFavorites();
+      }
+
+      document.getElementById("pageTitle").textContent = labels[page][0];
+      if (!isDashboard && !isToday && !isFavorites && !isCost) {
+        document.getElementById("placeholderTitle").textContent = labels[page][0];
+        document.getElementById("placeholderText").textContent = labels[page][1];
+      }
+    }
+
+    async function loadFavorites() {
+      try {
+        const response = await fetch("/api/favorites");
+        const result = await response.json();
+        if (result.ok) {
+          data.favorites = Array.isArray(result.favorites) ? result.favorites : [];
+          render();
+          renderFavoritesPage();
+        }
+      } catch (error) {
+        const list = document.getElementById("favoritesList");
+        if (list) {
+          list.innerHTML = '<div class="card" style="grid-column:1/-1;color:#cf4040;">관심상품을 불러오지 못했습니다.</div>';
+        }
+      }
+    }
+
+    function renderFavoritesPage() {
+      const list = document.getElementById("favoritesList");
+      const query = String(document.getElementById("favoritesSearch")?.value || "").trim().toLowerCase();
+      const favorites = Array.isArray(data.favorites) ? data.favorites : [];
+      const filtered = query
+        ? favorites.filter((item) => {
+            const a = String(item.translated_title || "").toLowerCase();
+            const b = String(item.title || "").toLowerCase();
+            return a.includes(query) || b.includes(query);
+          })
+        : favorites;
+
+      if (!filtered.length) {
+        list.innerHTML = '<div class="card" style="grid-column:1/-1;color:#65728a;">저장된 관심상품이 없습니다.</div>';
+        return;
+      }
+
+      list.innerHTML = filtered.map((item) => {
+        const translated = escapeHtml(item.translated_title || "");
+        const original = escapeHtml(item.title || "상품명 없음");
+        const display = translated && translated !== "번역 실패" ? translated : original;
+        const price = escapeHtml(item.price || "확인 실패");
+        const moq = escapeHtml(item.moq || "확인 실패");
+        const options = Array.isArray(item.options) && item.options.length ? item.options.map(escapeHtml).join(", ") : "확인 실패";
+        const link = escapeHtml(item.url || "#");
+        const offerId = escapeHtml(item.offer_id || "");
+        const sellingTitle = escapeHtml(item.selling_title || "");
+        const savedAt = escapeHtml(item.saved_at || "");
+
+        return `
+          <div class="card">
+            <div class="title" style="display:block;">
+              <h3 style="margin-bottom:8px;">${display}</h3>
+            </div>
+            <div class="meta">원문 상품명: ${original}</div>
+            <div class="meta">한글 상품명: ${translated || "번역 실패"}</div>
+            <div class="meta">가격: ${price}</div>
+            <div class="meta">MOQ: ${moq}</div>
+            <div class="meta">옵션: ${options}</div>
+            <div class="meta">판매용 상품명: ${sellingTitle || "미반영"}</div>
+            <div class="meta">저장일시: ${savedAt || "확인 실패"}</div>
+            <div class="detail-actions">
+              <a href="${link}" target="_blank" rel="noopener noreferrer"><button class="subtle" type="button">1688 상품 페이지 열기</button></a>
+              <button class="primary" type="button" style="background:#cf4040;" onclick="deleteFavoriteByOfferId('${offerId}')">삭제</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    async function deleteFavoriteByOfferId(offerId) {
+      if (!offerId) return;
+      try {
+        const response = await fetch("/api/favorites/delete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ offer_id: offerId, url: "" }),
+        });
+        const removed = await response.json();
+        if (removed.ok) {
+          data.favorites = Array.isArray(removed.favorites) ? removed.favorites : [];
+          render();
+          renderFavoritesPage();
+        }
+      } catch (error) {
+        const list = document.getElementById("favoritesList");
+        if (list) {
+          list.insertAdjacentHTML("afterbegin", '<div class="card" style="grid-column:1/-1;color:#cf4040;">삭제 처리 중 오류가 발생했습니다.</div>');
+        }
+      }
+    }
+
+    async function saveScannedCandidate(index) {
+      const candidate = data.candidates[index];
+      if (!candidate) return;
+
+      const payload = {
+        offer_id: String(candidate.id || ""),
+        title: String(candidate.keyword || candidate.name || ""),
+        translated_title: "",
+        selling_title: "",
+        url: String(candidate.search_url || ""),
+        price: "",
+        moq: "",
+        options: [],
+        image: "",
+      };
+
+      try {
+        const response = await fetch("/api/favorites/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const saved = await response.json();
+        const status = document.getElementById("status");
+        if (saved.duplicate) {
+          status.textContent = "이미 관심상품에 저장되어 있습니다.";
+          return;
+        }
+        if (saved.ok) {
+          data.favorites = Array.isArray(saved.favorites) ? saved.favorites : data.favorites;
+          render();
+          status.textContent = "관심상품에 저장되었습니다.";
+        }
+      } catch (error) {
+        document.getElementById("status").textContent = "관심상품 저장 중 오류가 발생했습니다.";
+      }
+    }
+
+    async function markCandidatePending(index) {
+      const candidate = data.candidates[index];
+      if (!candidate || !candidate.id) return;
+      try {
+        const response = await fetch("/api/candidates/approval-pending", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ candidate_id: String(candidate.id) }),
+        });
+        const payload = await response.json();
+        const status = document.getElementById("status");
+        if (!response.ok || !payload.ok) {
+          status.textContent = payload.error || "승인 대기 변경 중 오류가 발생했습니다.";
+          return;
+        }
+
+        if (payload.duplicate) {
+          status.textContent = "이미 승인 대기 중입니다.";
+        } else {
+          const target = data.candidates.find((x) => String(x.id || "") === String(candidate.id));
+          if (target) target.status = "approval_pending";
+          render();
+          status.textContent = payload.message || "승인 대기로 변경되었습니다.";
+        }
+      } catch (error) {
+        document.getElementById("status").textContent = "승인 대기 저장 중 오류가 발생했습니다.";
+      }
+    }
+
+    async function updateCandidateStatus(candidateId, nextStatus, message) {
+      const id = String(candidateId || "").trim();
+      if (!id) return;
+      const target = data.candidates.find((x) => String(x.id || "") === id);
+      if (!target) return;
+
+      const previousStatus = target.status;
+      target.status = nextStatus;
+      render();
+
+      try {
+        const response = await fetch("/api/data", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        const payload = await response.json();
+        if (!response.ok || !payload.ok) {
+          throw new Error(payload.error || "상태 저장 실패");
+        }
+        document.getElementById("status").textContent = message;
+      } catch (error) {
+        target.status = previousStatus;
+        render();
+        document.getElementById("status").textContent = "상태 저장 중 오류가 발생했습니다.";
+      }
+    }
+
+    async function approvePendingCandidate(candidateId) {
+      await updateCandidateStatus(candidateId, "approved", "승인 처리되었습니다.");
+    }
+
+    async function rejectPendingCandidate(candidateId) {
+      await updateCandidateStatus(candidateId, "rejected", "거절 처리되었습니다.");
+    }
+
+    function renderSellingTitleResult(message, generatedTitle) {
+      const box = document.getElementById("sellingTitleResult");
+      if (!box) return;
+
+      if (!generatedTitle) {
+        box.innerHTML = message ? `<div>${escapeHtml(message)}</div>` : "";
+        return;
+      }
+
+      box.innerHTML =
+        `<div>판매용 상품명: <strong>${escapeHtml(generatedTitle)}</strong></div>` +
+        '<div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">' +
+        '<button type="button" class="primary" onclick="copySellingTitle()">복사</button>' +
+        '<button type="button" class="subtle" onclick="applySellingTitleToFavorite()">관심상품에 반영</button>' +
+        '</div>' +
+        (message ? `<div style="margin-top:8px;color:#65728a;">${escapeHtml(message)}</div>` : "");
+    }
+
+    async function generateSellingTitle() {
+      if (!latest1688Analysis || !latest1688Analysis.ok) {
+        renderSellingTitleResult("먼저 1688 상품 분석을 완료해주세요.", "");
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/selling-title/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: latest1688Analysis.title || "",
+            translated_title: latest1688Analysis.translated_title || "",
+            price: latest1688Analysis.price || "",
+            moq: latest1688Analysis.moq || "",
+            options: Array.isArray(latest1688Analysis.options) ? latest1688Analysis.options : [],
+          }),
+        });
+        const result = await response.json();
+        latestSellingTitle = result.selling_title || "";
+        renderSellingTitleResult("", latestSellingTitle || "번역 실패");
+      } catch (error) {
+        latestSellingTitle = "번역 실패";
+        renderSellingTitleResult("생성 중 오류가 발생했습니다.", latestSellingTitle);
+      }
+    }
+
+    async function copySellingTitle() {
+      if (!latestSellingTitle) {
+        renderSellingTitleResult("복사할 판매용 상품명이 없습니다.", "");
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(latestSellingTitle);
+        renderSellingTitleResult("클립보드에 복사되었습니다.", latestSellingTitle);
+      } catch (error) {
+        const fallback = document.createElement("textarea");
+        fallback.value = latestSellingTitle;
+        document.body.appendChild(fallback);
+        fallback.select();
+        document.execCommand("copy");
+        document.body.removeChild(fallback);
+        renderSellingTitleResult("클립보드에 복사되었습니다.", latestSellingTitle);
+      }
+    }
+
+    async function applySellingTitleToFavorite() {
+      if (!latest1688Analysis || !latest1688Analysis.ok) {
+        renderSellingTitleResult("분석 결과가 없어 반영할 수 없습니다.", latestSellingTitle);
+        return;
+      }
+      if (!latestSellingTitle) {
+        renderSellingTitleResult("먼저 판매용 상품명을 만들어주세요.", "");
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/favorites/update-selling-title", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            offer_id: latest1688Analysis.offer_id || "",
+            url: latest1688Analysis.url || "",
+            selling_title: latestSellingTitle,
+          }),
+        });
+
+        const updated = await response.json();
+        if (updated.ok && updated.updated) {
+          data.favorites = Array.isArray(updated.favorites) ? updated.favorites : data.favorites;
+          render();
+          renderFavoritesPage();
+          renderSellingTitleResult("관심상품에 반영되었습니다.", latestSellingTitle);
+          return;
+        }
+
+        if (updated.ok && !updated.updated) {
+          renderSellingTitleResult("관심상품에 해당 상품이 없습니다. 먼저 저장해주세요.", latestSellingTitle);
+          return;
+        }
+
+        renderSellingTitleResult("관심상품 반영에 실패했습니다.", latestSellingTitle);
+      } catch (error) {
+        renderSellingTitleResult("서버 연결 오류로 반영에 실패했습니다.", latestSellingTitle);
+      }
+    }
+
+    async function loadCoupangMarket(analysisData) {
+      latestCoupangMarket = null;
+      if (!analysisData || !analysisData.ok) return;
+
+      const keyword = (analysisData.translated_title && analysisData.translated_title !== "번역 실패")
+        ? analysisData.translated_title
+        : (analysisData.title || "");
+      if (!keyword) return;
+
+      try {
+        const response = await fetch("/api/coupang/market", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ keyword }),
+        });
+        latestCoupangMarket = await response.json();
+      } catch (error) {
+        latestCoupangMarket = { ok: false, error: "쿠팡 시세 조회 실패" };
+      }
+    }
+
+    async function analyze1688() {
+      const url = document.getElementById("url1688").value.trim();
+      const result = document.getElementById("analysisResult");
+
+      if (!url) {
+        result.textContent = "1688 상품 URL을 입력해주세요.";
+        return;
+      }
+
+      result.textContent = "분석 중입니다...";
+
+      try {
+        const response = await fetch("/api/1688/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url }),
+        });
+
+        const payload = await response.json();
+        if (!payload.ok) {
+          latest1688Analysis = null;
+          latestSellingTitle = "";
+          renderSellingTitleResult("", "");
+          result.textContent = "오류: " + (payload.error || "분석 실패");
+          return;
+        }
+
+        latest1688Analysis = payload;
+        latestSellingTitle = payload.selling_title || "";
+        renderSellingTitleResult("", latestSellingTitle);
+        await loadCoupangMarket(payload);
+
+        let safeImageUrl = "";
+        if (payload.image) {
+          try {
+            const parsed = new URL(String(payload.image));
+            if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+              safeImageUrl = parsed.href;
+            }
+          } catch (e) {
+            safeImageUrl = "";
+          }
+        }
+
+        const moqText = payload.moq ? payload.moq : "확인 실패";
+        const optionsText = Array.isArray(payload.options) && payload.options.length
+          ? payload.options.join(", ")
+          : "확인 실패";
+
+        const imageHtml = safeImageUrl
+          ? "<br><div style=\"margin-top:8px;\"><img src=\"" + safeImageUrl + "\" alt=\"상품 대표 이미지\" style=\"max-width:220px;max-height:220px;object-fit:contain;border-radius:10px;border:1px solid #ddd;\" onerror=\"this.style.display='none';this.nextElementSibling.style.display='block';\"><div style=\"display:none;color:#666;\">대표 이미지를 불러오지 못했습니다.</div></div>"
+          : "<br>이미지를 찾지 못했습니다.";
+
+        result.innerHTML =
+          "1688 주소 확인 완료" +
+          "<br>상품번호: " + (payload.offer_id || "확인 중") +
+          "<br>원문 상품명: " + (payload.title || payload.warning || "확인 실패") +
+          "<br>한글 상품명: " + (payload.translated_title || "번역 실패") +
+          "<br>가격: " + (payload.price ? payload.price + "위안" : payload.price_warning || "확인 실패") +
+          "<br>최소 주문수량: " + moqText +
+          "<br>옵션: " + optionsText +
+          imageHtml;
+
+        if (payload.price) {
+          const parsedPrice = String(payload.price).replace(/[^0-9.]/g, "");
+          if (parsedPrice) {
+            const costInput = document.getElementById("costCny");
+            if (costInput) {
+              costInput.value = parsedPrice;
+            }
+            result.innerHTML += "<br>1688 가격이 원가 계산기에 자동 입력되었습니다.";
+          }
+        }
+      } catch (error) {
+        latest1688Analysis = null;
+        latestSellingTitle = "";
+        renderSellingTitleResult("", "");
+        result.textContent = "서버 연결 오류: " + error.message;
+      }
+    }
+
+    function calculateCost() {
+      const readNumber = (id) => {
+        const raw = document.getElementById(id).value;
+        const n = Number(raw);
+        return Number.isFinite(n) ? n : 0;
+      };
+
+      const costCny = readNumber("costCny");
+      const exchangeRate = readNumber("exchangeRate");
+      const chinaShipping = readNumber("chinaShipping");
+      const globalShipping = readNumber("globalShipping");
+      const taxCost = readNumber("taxCost");
+      const coupangFee = readNumber("coupangFee");
+      const targetMargin = readNumber("targetMargin");
+
+      const productCostKrw = costCny * exchangeRate;
+      const totalCost = productCostKrw + chinaShipping + globalShipping + taxCost;
+
+      const feeRate = coupangFee / 100;
+      const marginRate = targetMargin / 100;
+      const denominator = 1 - feeRate - marginRate;
+      const resultBox = document.getElementById("costResult");
+      if (denominator <= 0) {
+        resultBox.textContent = "수수료율과 목표 마진율의 합이 100% 이상이면 계산할 수 없습니다.";
+        return;
+      }
+
+      const recommendedPrice = totalCost / denominator;
+      const feeAmount = recommendedPrice * feeRate;
+      const netProfit = recommendedPrice - feeAmount - totalCost;
+      const actualMarginRate = recommendedPrice > 0 ? (netProfit / recommendedPrice) * 100 : 0;
+      const profitColor = netProfit < 0 ? "#cf4040" : "#1d8f4e";
+
+      const formatWon = (n) => `${Math.round(n).toLocaleString()}원`;
+      const formatPercent = (n) => `${n.toFixed(1)}%`;
+
+      const parsedPriceCny = latest1688Analysis && latest1688Analysis.price
+        ? Number(String(latest1688Analysis.price).replace(/[^0-9.]/g, ""))
+        : NaN;
+      const parsedMoq = latest1688Analysis && latest1688Analysis.moq
+        ? Number(String(latest1688Analysis.moq).replace(/[^0-9.]/g, ""))
+        : NaN;
+      const optionCount = latest1688Analysis && Array.isArray(latest1688Analysis.options)
+        ? latest1688Analysis.options.filter((x) => String(x || "").trim().length > 0).length
+        : 0;
+      const titleOk = !!(latest1688Analysis && latest1688Analysis.title && String(latest1688Analysis.title).trim().length >= 2);
+
+      const hasFavoriteIdentity = !!(latest1688Analysis && (latest1688Analysis.offer_id || latest1688Analysis.url));
+      const isAlreadyFavorite = hasFavoriteIdentity && data.favorites.some((item) => {
+        const itemOfferId = String(item.offer_id || "").trim();
+        const itemUrl = String(item.url || "").trim();
+        const currentOfferId = String(latest1688Analysis.offer_id || "").trim();
+        const currentUrl = String(latest1688Analysis.url || "").trim();
+        return (currentOfferId && itemOfferId === currentOfferId) || (!currentOfferId && currentUrl && itemUrl === currentUrl);
+      });
+      const favoriteSavable = hasFavoriteIdentity && !isAlreadyFavorite;
+
+      let imageOk = false;
+      if (latest1688Analysis && latest1688Analysis.image) {
+        try {
+          const imageUrl = new URL(String(latest1688Analysis.image));
+          imageOk = imageUrl.protocol === "http:" || imageUrl.protocol === "https:";
+        } catch (e) {
+          imageOk = false;
+        }
+      }
+
+      let profitScore = 0;
+      const reasons = [];
+
+      if (actualMarginRate >= 30) {
+        profitScore += 30;
+        reasons.push(`마진율 ${formatPercent(actualMarginRate)}로 수익성 기준을 충족했습니다.`);
+      } else {
+        reasons.push(`마진율 ${formatPercent(actualMarginRate)}로 수익성 기준에 미달합니다.`);
+      }
+
+      if (Number.isFinite(parsedMoq) && parsedMoq >= 1 && parsedMoq <= 2) {
+        profitScore += 20;
+        reasons.push(`MOQ ${parsedMoq}개로 소량 테스트에 유리합니다.`);
+      } else {
+        reasons.push(`MOQ ${Number.isFinite(parsedMoq) ? parsedMoq + "개" : "확인 실패"}로 초기 부담이 있습니다.`);
+      }
+
+      if (optionCount > 0 && optionCount <= 5) {
+        profitScore += 10;
+        reasons.push(`옵션 수 ${optionCount}개로 운영이 단순합니다.`);
+      } else {
+        reasons.push(`옵션 수 ${optionCount || "확인 실패"}개로 운영 복잡도 확인이 필요합니다.`);
+      }
+
+      if (Number.isFinite(parsedPriceCny) && parsedPriceCny <= 100) {
+        profitScore += 10;
+        reasons.push(`공급가 ${parsedPriceCny}위안으로 원가 경쟁력이 있습니다.`);
+      } else {
+        reasons.push(`공급가 ${Number.isFinite(parsedPriceCny) ? parsedPriceCny + "위안" : "확인 실패"}로 추가 검토가 필요합니다.`);
+      }
+
+      if (imageOk) {
+        profitScore += 10;
+        reasons.push("대표 이미지 품질 확인이 가능합니다.");
+      } else {
+        reasons.push("대표 이미지 확인이 어려워 상세페이지 준비 리스크가 있습니다.");
+      }
+
+      if (titleOk) {
+        profitScore += 10;
+        reasons.push("상품명 추출이 정상입니다.");
+      } else {
+        reasons.push("상품명 추출이 불완전합니다.");
+      }
+
+      if (favoriteSavable) {
+        profitScore += 10;
+        reasons.push("관심상품 저장이 가능합니다.");
+      } else {
+        reasons.push(isAlreadyFavorite ? "이미 관심상품에 저장된 상태입니다." : "관심상품 저장 식별값이 부족합니다.");
+      }
+
+      profitScore = Math.max(0, Math.min(100, profitScore));
+      const stars = profitScore >= 90 ? "★★★★★" : profitScore >= 80 ? "★★★★" : profitScore >= 70 ? "★★★" : profitScore >= 60 ? "★★" : "★";
+      const recommendation = profitScore >= 80 ? "추천 상품입니다." : "추천 보류 상품입니다.";
+
+      const marketLowPrice = latestCoupangMarket && Number.isFinite(Number(latestCoupangMarket.low_price))
+        ? formatWon(Number(latestCoupangMarket.low_price))
+        : "확인 실패";
+      const marketAvgPrice = latestCoupangMarket && Number.isFinite(Number(latestCoupangMarket.avg_price))
+        ? formatWon(Number(latestCoupangMarket.avg_price))
+        : "확인 실패";
+      const marketReviewCount = latestCoupangMarket && Number.isFinite(Number(latestCoupangMarket.review_count))
+        ? `${Number(latestCoupangMarket.review_count).toLocaleString()}개`
+        : "확인 실패";
+      const marketSellerCount = latestCoupangMarket && Number.isFinite(Number(latestCoupangMarket.seller_count))
+        ? `${Number(latestCoupangMarket.seller_count).toLocaleString()}개`
+        : "확인 실패";
+
+      resultBox.innerHTML =
+        '<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;">' +
+        `<div style="background:#fff;border:1px solid #e2e7f0;border-radius:12px;padding:12px;">총 원가<br><strong style="font-size:18px;">${formatWon(totalCost)}</strong></div>` +
+        `<div style="background:#fff;border:1px solid #e2e7f0;border-radius:12px;padding:12px;">추천 판매가<br><strong style="font-size:18px;">${formatWon(recommendedPrice)}</strong></div>` +
+        `<div style="background:#fff;border:1px solid #e2e7f0;border-radius:12px;padding:12px;">예상 순이익<br><strong style="font-size:18px;color:${profitColor};">${formatWon(netProfit)}</strong></div>` +
+        `<div style="background:#fff;border:1px solid #e2e7f0;border-radius:12px;padding:12px;">마진율<br><strong style="font-size:18px;">${formatPercent(actualMarginRate)}</strong></div>` +
+        '</div>' +
+        '<div style="margin-top:12px;background:#fff;border:1px solid #e2e7f0;border-radius:12px;padding:14px;">' +
+        `<div style="font-weight:700;">상품성 점수 (Profit Score)</div>` +
+        `<div style="margin-top:6px;font-size:20px;font-weight:800;color:#2a3550;">${profitScore}점 ${stars}</div>` +
+        `<div style="margin-top:8px;color:#33415e;">추천 여부: <strong>${recommendation}</strong></div>` +
+        `<div style="margin-top:8px;color:#4b5872;line-height:1.7;">${reasons.slice(0, 5).map((line) => `• ${line}`).join("<br>")}</div>` +
+        '</div>' +
+        '<div style="margin-top:12px;background:#fff;border:1px solid #e2e7f0;border-radius:12px;padding:14px;">' +
+        '<div style="font-weight:700;">쿠팡 시세</div>' +
+        `<div style="margin-top:8px;color:#33415e;line-height:1.7;">최저 판매가: <strong>${marketLowPrice}</strong><br>평균 판매가: <strong>${marketAvgPrice}</strong><br>리뷰 수: <strong>${marketReviewCount}</strong><br>판매자 수: <strong>${marketSellerCount}</strong></div>` +
+        '</div>';
+    }
+
+    document.querySelectorAll(".menu button").forEach((btn) => {
+      btn.addEventListener("click", () => showPage(btn.dataset.page));
+    });
+
+    document.getElementById("backDashboard").addEventListener("click", () => showPage("dashboard"));
+
+    document.getElementById("scanBtn").addEventListener("click", async () => {
+      const button = document.getElementById("scanBtn");
+      const status = document.getElementById("status");
+      button.disabled = true;
+      status.textContent = "수집 중";
+
+      try {
+        const response = await fetch("/api/scan", { method: "POST" });
+        const payload = await response.json();
+        if (!response.ok || payload.error) {
+          throw new Error(payload.error || "스캔 실패");
+        }
+
+        data = payload;
+        if (!Array.isArray(data.candidates)) data.candidates = [];
+        if (!Array.isArray(data.favorites)) data.favorites = [];
+        render();
+
+        const info = data.scan_info || {};
+        const counts = info.source_counts || {};
+        const errors = Array.isArray(info.errors) ? info.errors : [];
+        const errorText = errors.length ? ` / 오류 소스: ${errors.join(" | ")}` : "";
+        status.textContent = `수집 완료 · 전체 수집 ${info.total_collected || 0}개 · 저장 ${info.total_saved || data.candidates.length}개 · Google ${counts.google || 0} · Naver ${counts.naver || 0} · Amazon ${counts.amazon || 0}${errorText}`;
+      } catch (error) {
+        status.textContent = `오류: ${error.message}`;
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    load();
+  </script>
+</body>
+</html>

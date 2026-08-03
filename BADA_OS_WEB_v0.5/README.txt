@@ -6,6 +6,9 @@ BADA OS WEB v0.5
 
 주소: http://127.0.0.1:8766
 
+PowerShell:
+$env:OPENAI_API_KEY="본인의_API_KEY"
+
 네이버 수집이 막히거나 페이지 구조가 바뀌면 fallback 키워드를 사용합니다.
 Amazon 미국 Best Sellers 수집은 기본적으로 자동 시도되며, 실패해도 전체 스캔은 계속 진행됩니다.
 설치가 필요한 경우: pip install playwright
